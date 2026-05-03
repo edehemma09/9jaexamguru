@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Learn&Pass — 9jaExamGuru</title>
+  <title>News | Learn&Pass — 9jaExamGuru</title>
   <meta name="description" content="Learn&Pass — Free JAMB, WAEC, NECO &amp; GCE exam preparation for Nigerian students.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23006633'/><text x='50%25' y='55%25' font-size='14' text-anchor='middle' dominant-baseline='middle' fill='%23FFCC00' font-family='Georgia,serif' font-weight='bold'>LP</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
@@ -1123,10 +1123,10 @@ p { color: var(--body); }
       <div class="logo-text"><span class="logo-main">Learn<span class="logo-amp">&</span>Pass</span><span class="logo-sub">Exam Guru</span></div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="resources.html">Resources</a>
-      <a href="news.html">News</a>
+      <a href="news.html" class="active">News</a>
       <a href="contact.html">Contact</a>
       <a href="cbt.html" class="nav-cta-btn">Practice CBT</a>
     </div>
@@ -1145,343 +1145,249 @@ p { color: var(--body); }
   </div>
 </nav>
 <main>
-<!-- HERO — University Style (Merged) -->
-  <section class="hero-section" id="home-hero">
-
-    <!-- Background image fills entire hero -->
-    <div class="hero-bg-img">
-      <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/79b660de2_whatsapp_image_1287290096200321.jpg" alt="Nigerian student studying"/>
-    </div>
-    <!-- Dark overlay -->
-    <div class="hero-overlay"></div>
-
-    <!-- Hero content -->
-    <div class="hero-content">
-      <div class="wrap">
-        <div class="hero-inner">
-
-          <!-- Text column -->
-          <div class="hero-text-col">
-            <div class="hero-alert"><span></span>2026 JAMB Registration Now Open</div>
-            <h1>Prepare. Practice.<br/><em>Pass.</em></h1>
-            <div class="hero-divider"></div>
-            <p>Nigeria's free exam preparation platform for JAMB, WAEC, NECO &amp; GCE. Verified past questions, timed CBT simulation and daily education news — all free, always.</p>
-            <div class="hero-btns">
-              <button class="hero-btn-primary" onclick="window.location='cbt.html'">Start CBT Practice</button>
-              <button class="hero-btn-ghost" onclick="window.location='resources.html'">Browse Past Questions</button>
-            </div>
-            <div class="hero-stats">
-              <div class="hero-stat"><div class="num">50K+</div><div class="lbl">Verified Questions</div></div>
-              <div class="hero-stat"><div class="num">12K+</div><div class="lbl">Active Students</div></div>
-              <div class="hero-stat"><div class="num">100%</div><div class="lbl">Free Forever</div></div>
-            </div>
-          </div>
-
-          <!-- Floating badge card -->
-          <div class="hero-card">
-            <div class="hero-card-label">Platform Stats</div>
-            <div class="hero-card-row">
-              <div class="hero-card-stat"><div class="hero-card-num">12,000+</div><div class="hero-card-lbl">Students</div></div>
-              <div class="hero-card-stat"><div class="hero-card-num">50K+</div><div class="hero-card-lbl">Questions</div></div>
-            </div>
-            <div class="hero-card-row" style="margin-top:10px;">
-              <div class="hero-card-stat"><div class="hero-card-num">6</div><div class="hero-card-lbl">Exam Types</div></div>
-              <div class="hero-card-stat"><div class="hero-card-num">100%</div><div class="hero-card-lbl">Free</div></div>
-            </div>
-          </div>
-
-        </div><!-- end hero-inner -->
-      </div><!-- end wrap -->
-    </div><!-- end hero-content -->
-
-    <!-- Quick-links bar — fused bottom of hero -->
-    <div class="hero-quick-bar">
-      <div class="wrap">
-        <button class="hero-nav-item active" onclick="window.location='resources.html'">
-          <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          JAMB
-        </button>
-        <button class="hero-nav-item" onclick="window.location='resources.html'">
-          <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          WAEC
-        </button>
-        <button class="hero-nav-item" onclick="window.location='resources.html'">
-          <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          NECO
-        </button>
-        <button class="hero-nav-item" onclick="window.location='cbt.html'">
-          <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          CBT Practice
-        </button>
-        <button class="hero-nav-item" onclick="window.location='news.html'">
-          <svg viewBox="0 0 24 24" stroke-width="2" fill="none"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
-          Edu News
-        </button>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- TRACK BAR -->
-  <div class="track-bar">
-    <div class="wrap" style="padding:0;">
-      <div class="track-inner">
-        <div class="track-label">
-          <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          Track Session
-        </div>
-        <input type="text" id="track-id" placeholder="Enter your session ID  e.g. LP-2024-001234"/>
-        <button onclick="doTrack()">Track Now</button>
-      </div>
+<!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="bc">Home &nbsp;/&nbsp; <span>Education News</span></div>
+      <h1>Education <span>News</span></h1>
+      <p>JAMB updates, WAEC timetables, NECO announcements and education policy — curated daily for Nigerian students.</p>
     </div>
   </div>
 
-  <!-- EXAM TYPES -->
+  <!-- NEWS BODY -->
   <section class="section">
     <div class="wrap">
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:0;">
-        <div>
-          <span class="eyebrow">Exams We Cover</span>
-          <h2 class="section-title">Every Major Exam.<br/><span>One Free Platform.</span></h2>
-          <span class="rule"></span>
-          <p class="section-lead">From JAMB UTME to international certifications — our verified library covers every exam Nigerian students sit.</p>
-        </div>
-        <a href="resources.html" class="btn btn-outline" onclick="window.location='resources.html'" style="margin-bottom:4px;">Full Library</a>
-      </div>
-      <div class="exam-tiles" style="margin-top:44px;">
-        <div class="exam-tile" onclick="window.location='resources.html'">
-          <img src="https://i.ibb.co/qFk70N0r/photo-1628198661856-102874fb9d82.jpg" alt="Students writing JAMB"/>
-          <div class="exam-tile-body">
-            <span class="badge">JAMB</span>
-            <h4>JAMB / UTME</h4>
-            <p>Joint Admissions Board</p>
-            <div class="count">15,000+ Questions</div>
-          </div>
-        </div>
-        <div class="exam-tile" onclick="window.location='resources.html'">
-          <img src="https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg" alt="Students in WAEC exam hall"/>
-          <div class="exam-tile-body">
-            <span class="badge">WAEC</span>
-            <h4>WAEC / WASSCE</h4>
-            <p>West African Examinations Council</p>
-            <div class="count">18,000+ Questions</div>
-          </div>
-        </div>
-        <div class="exam-tile" onclick="window.location='resources.html'">
-          <img src="https://i.ibb.co/q3pnpDP5/photo-1694286080685-279d3b3c8dfb.jpg" alt="Nigerian students classroom"/>
-          <div class="exam-tile-body">
-            <span class="badge">NECO</span>
-            <h4>NECO / SSCE</h4>
-            <p>National Examinations Council</p>
-            <div class="count">12,000+ Questions</div>
-          </div>
-        </div>
-        <div class="exam-tile" onclick="window.location='resources.html'">
-          <img src="https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg" alt="African students studying"/>
-          <div class="exam-tile-body">
-            <span class="badge">GCE</span>
-            <h4>GCE / NABTEB</h4>
-            <p>General Certificate Exams</p>
-            <div class="count">8,000+ Questions</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="section bg-off">
-    <div class="wrap">
-      <span class="eyebrow">Simple Process</span>
-      <h2 class="section-title">Three Steps to <span>Exam Success</span></h2>
-      <span class="rule"></span>
-      <div class="how-grid">
-        <div class="how-item">
-          <img src="https://i.ibb.co/fVzvWG2p/photo-1543579281-eeacc097d696.jpg" alt="Students creating accounts"/>
-          <div class="step-circle">1</div>
-          <h4>Create a Free Account</h4>
-          <p>Sign up in under 60 seconds with your email. No payment, no credit card, no hidden fees — ever.</p>
-        </div>
-        <div class="how-item">
-          <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/a71b64dfa_whatsapp_image_1292932678885555.jpg" alt="Group of young African students"/>
-          <div class="step-circle">2</div>
-          <h4>Choose Your Exam &amp; Subject</h4>
-          <p>Select from JAMB, WAEC, NECO, GCE and more. Filter questions by subject and year.</p>
-        </div>
-        <div class="how-item">
-          <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/54a5e5c64_whatsapp_image_1311914907560218.jpg" alt="African schoolboy smiling at his desk in classroom"/>
-          <div class="step-circle">3</div>
-          <h4>Practice, Review &amp; Pass</h4>
-          <p>Take timed CBT sessions, review your answers, track your progress. Repeat until you pass.</p>
+      <!-- FILTER BAR -->
+      <div class="news-filter-bar">
+        <button class="nf-btn active" onclick="filterNews('all',this)">All</button>
+        <button class="nf-btn" onclick="filterNews('jamb',this)">JAMB</button>
+        <button class="nf-btn" onclick="filterNews('waec',this)">WAEC</button>
+        <button class="nf-btn" onclick="filterNews('neco',this)">NECO</button>
+        <button class="nf-btn" onclick="filterNews('policy',this)">Policy</button>
+        <button class="nf-btn" onclick="filterNews('scholarship',this)">Scholarships</button>
+      </div>
+
+      <!-- ARTICLE SINGLE VIEW (hidden by default) -->
+      <div id="article-view" style="display:none;">
+        <div class="article-wrap">
+          <div class="article-back" onclick="closeArticle()">
+            <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to News
+          </div>
+          <div id="article-content"></div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FEATURES BAND -->
-  <div class="features-band">
-    <div class="wrap">
-      <div class="features-row">
-        <div class="feat-item">
-          <div class="feat-icon">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>
+      <!-- NEWS GRID VIEW -->
+      <div id="news-grid-view">
+        <div class="news-page-grid">
+
+          <!-- LEFT: Featured + List -->
           <div>
-            <h5>Verified Questions</h5>
-            <p>Official past exam papers only. No guesswork, no errors.</p>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <h5>Timed CBT Mode</h5>
-            <p>Simulates the real JAMB exam environment precisely.</p>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon">
-            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
-          <div>
-            <h5>Progress Tracking</h5>
-            <p>See your scores improve. Spot weak areas, target them.</p>
-          </div>
-        </div>
-        <div class="feat-item">
-          <div class="feat-icon">
-            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          </div>
-          <div>
-            <h5>For Every Student</h5>
-            <p>SS1 through university aspirants. Free for all, always.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- CBT SPLIT -->
-  <section class="section">
-    <div class="wrap">
-      <div class="split-section" style="border:1px solid var(--line);">
-        <div class="split-img">
-          <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/32ce3644d_whatsapp_image_1740874493741517.jpg" alt="Three African women in group study session with laptop and books"/>
-        </div>
-        <div class="split-body">
-          <span class="eyebrow">CBT Practice Module</span>
-          <h2 class="section-title" style="font-size:clamp(22px,3vw,34px);">Real Exam Simulation.<br/><span>No Surprises.</span></h2>
-          <span class="rule"></span>
-          <p>Our CBT module replicates the JAMB computer-based test exactly — timed sessions, randomized questions, instant scoring. We studied how real CBT platforms work and built ours to match.</p>
-          <ul class="check-list">
-            <li>20 questions per session, 10-minute countdown</li>
-            <li>All major subjects — Mathematics, English, Sciences, Arts</li>
-            <li>Instant answer breakdown after each session</li>
-            <li>Filter by exam year: 2000 through 2024</li>
-          </ul>
-          <a href="cbt.html" class="btn btn-primary" onclick="window.location='cbt.html'">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            Start CBT Practice
-          </a>
-        </div>
-      </div>
-    </div>
+            <!-- FEATURED STORY -->
+            <div class="news-featured" onclick="openArticle(0)" data-cat="jamb">
+              <div class="news-featured-img">
+                <img src="https://i.ibb.co/qFk70N0r/photo-1628198661856-102874fb9d82.jpg" alt="JAMB UTME 2026"/>
+              </div>
+              <div class="news-featured-body">
+                <div class="n-cat">JAMB Update</div>
+                <h2>JAMB Extends 2026 UTME Registration Deadline — New Date Confirmed</h2>
+                <p>The Joint Admissions and Matriculation Board has officially extended the registration window for the 2026 Unified Tertiary Matriculation Examination following pressure from student groups and education stakeholders across Nigeria.</p>
+                <div class="news-meta-row">
+                  <span class="author" style="color:var(--green);font-weight:700;">Chukwuemeka Eze</span>
+                  <span class="dot"></span>
+                  <span>May 1, 2026</span>
+                  <span class="dot"></span>
+                  <span>5 min read</span>
+                </div>
+                <div class="read-more-link">
+                  Read Full Story
+                  <svg viewBox="0 0 24 24" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- NEWS LIST -->
+            <div class="news-list">
+
+              <div class="news-card" onclick="openArticle(1)" data-cat="waec">
+                <div class="news-card-img">
+                  <img src="https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg" alt="WAEC Timetable 2026"/>
+                </div>
+                <div class="news-card-body">
+                  <div class="n-cat-tag">WAEC</div>
+                  <h3>WAEC 2026 WASSCE Timetable Released — Full Subject Schedule Inside</h3>
+                  <p>The West African Examinations Council has released the full timetable for the 2026 WASSCE. Exams begin May 12. Here is everything candidates need to know before sitting the papers.</p>
+                  <div class="news-card-meta">
+                    <span>Ngozi Adeyemi</span><span class="dot"></span>
+                    <span>Apr 29, 2026</span><span class="dot"></span>
+                    <span>4 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card" onclick="openArticle(2)" data-cat="neco">
+                <div class="news-card-img">
+                  <img src="https://i.ibb.co/q3pnpDP5/photo-1694286080685-279d3b3c8dfb.jpg" alt="NECO Biometric Policy"/>
+                </div>
+                <div class="news-card-body">
+                  <div class="n-cat-tag">NECO</div>
+                  <h3>NECO Clarifies Biometric Accreditation Policy — What Every Candidate Must Do</h3>
+                  <p>The National Examinations Council has issued a clarification on its new mandatory biometric accreditation process. Failure to comply will lead to disqualification. Full details here.</p>
+                  <div class="news-card-meta">
+                    <span>Fatima Al-Hassan</span><span class="dot"></span>
+                    <span>Apr 27, 2026</span><span class="dot"></span>
+                    <span>3 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card" onclick="openArticle(3)" data-cat="policy">
+                <div class="news-card-img">
+                  <img src="https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg" alt="Federal Ministry Education"/>
+                </div>
+                <div class="news-card-body">
+                  <div class="n-cat-tag">Policy</div>
+                  <h3>Federal Government Approves New Minimum Score Policy for University Admissions</h3>
+                  <p>The Federal Ministry of Education has announced a revised minimum JAMB cut-off mark framework for university admissions, effective the 2026/2027 academic session. Here is what changes.</p>
+                  <div class="news-card-meta">
+                    <span>Emeka Nwachukwu</span><span class="dot"></span>
+                    <span>Apr 25, 2026</span><span class="dot"></span>
+                    <span>6 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card" onclick="openArticle(4)" data-cat="scholarship">
+                <div class="news-card-img">
+                  <img src="https://i.ibb.co/qF3zr88g/photo-1649486116205-71c92cf5160f.jpg" alt="Scholarship Nigeria 2026"/>
+                </div>
+                <div class="news-card-body">
+                  <div class="n-cat-tag">Scholarship</div>
+                  <h3>2026 Federal Government Scholarship Applications Now Open — Full Eligibility Guide</h3>
+                  <p>The Bilateral Education Agreement scholarship programme for Nigerian students seeking to study abroad is accepting applications. We break down every requirement, deadline and eligible country.</p>
+                  <div class="news-card-meta">
+                    <span>Aisha Mohammed</span><span class="dot"></span>
+                    <span>Apr 23, 2026</span><span class="dot"></span>
+                    <span>7 min read</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="news-card" onclick="openArticle(5)" data-cat="jamb">
+                <div class="news-card-img">
+                  <img src="https://i.ibb.co/fVzvWG2p/photo-1543579281-eeacc097d696.jpg" alt="JAMB Result 2025"/>
+                </div>
+                <div class="news-card-body">
+                  <div class="n-cat-tag">JAMB</div>
+                  <h3>How to Check Your JAMB 2025 Result and Request a Remark — Step by Step</h3>
+                  <p>Thousands of 2025 UTME candidates are still seeking help checking results and requesting re-marking. We have put together the clearest guide available — with screenshots and direct JAMB portal links.</p>
+                  <div class="news-card-meta">
+                    <span>Chukwuemeka Eze</span><span class="dot"></span>
+                    <span>Apr 20, 2026</span><span class="dot"></span>
+                    <span>4 min read</span>
+                  </div>
+                </div>
+              </div>
+
+            </div><!-- end news-list -->
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="news-sidebar">
+
+            <!-- Trending -->
+            <div class="sidebar-block">
+              <div class="sidebar-head">Trending Stories</div>
+              <div class="sidebar-item" onclick="openArticle(1)">
+                <img src="https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg" alt=""/>
+                <div class="sidebar-item-body">
+                  <div class="sidebar-item-cat">WAEC</div>
+                  <div class="sidebar-item-title">WAEC 2026 Timetable Released</div>
+                  <div class="sidebar-item-date">Apr 29, 2026</div>
+                </div>
+              </div>
+              <div class="sidebar-item" onclick="openArticle(4)">
+                <img src="https://i.ibb.co/qF3zr88g/photo-1649486116205-71c92cf5160f.jpg" alt=""/>
+                <div class="sidebar-item-body">
+                  <div class="sidebar-item-cat">Scholarship</div>
+                  <div class="sidebar-item-title">FG Scholarship Applications Open</div>
+                  <div class="sidebar-item-date">Apr 23, 2026</div>
+                </div>
+              </div>
+              <div class="sidebar-item" onclick="openArticle(3)">
+                <img src="https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg" alt=""/>
+                <div class="sidebar-item-body">
+                  <div class="sidebar-item-cat">Policy</div>
+                  <div class="sidebar-item-title">New University Admission Score Policy</div>
+                  <div class="sidebar-item-date">Apr 25, 2026</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exam Dates -->
+            <div class="sidebar-block">
+              <div class="sidebar-head">Key Exam Dates — 2026</div>
+              <div class="exam-dates-list">
+                <div class="exam-date-item">
+                  <div>
+                    <div class="ed-name">JAMB UTME</div>
+                    <div class="ed-date">Registration closes Jun 14</div>
+                  </div>
+                  <span class="ed-badge soon">Soon</span>
+                </div>
+                <div class="exam-date-item">
+                  <div>
+                    <div class="ed-name">WAEC WASSCE</div>
+                    <div class="ed-date">Exams: May 12 – Jun 28</div>
+                  </div>
+                  <span class="ed-badge soon">Active</span>
+                </div>
+                <div class="exam-date-item">
+                  <div>
+                    <div class="ed-name">NECO SSCE</div>
+                    <div class="ed-date">Begins Jul 7, 2026</div>
+                  </div>
+                  <span class="ed-badge upcoming">Upcoming</span>
+                </div>
+                <div class="exam-date-item">
+                  <div>
+                    <div class="ed-name">GCE 1st Series</div>
+                    <div class="ed-date">Begins Aug 18, 2026</div>
+                  </div>
+                  <span class="ed-badge upcoming">Upcoming</span>
+                </div>
+                <div class="exam-date-item">
+                  <div>
+                    <div class="ed-name">NABTEB</div>
+                    <div class="ed-date">Begins Sept 2, 2026</div>
+                  </div>
+                  <span class="ed-badge upcoming">Upcoming</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Newsletter signup -->
+            <div class="sidebar-block" style="background:var(--green); border-color:var(--green);">
+              <div style="padding:24px 22px;">
+                <div style="font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Stay Updated</div>
+                <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:#fff; line-height:1.25; margin-bottom:10px;">Get Exam Alerts Delivered Free</div>
+                <p style="font-size:12.5px; color:rgba(255,255,255,.7); margin-bottom:18px; line-height:1.65;">JAMB dates, WAEC timetables and scholarship deadlines — direct to your inbox.</p>
+                <input type="email" placeholder="Your email address" style="width:100%; padding:11px 14px; border:none; font-family:'Poppins',sans-serif; font-size:13px; outline:none; margin-bottom:10px;"/>
+                <button style="width:100%; background:var(--gold); color:var(--green-dark); font-family:'Poppins',sans-serif; font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:1px; padding:12px; border:none; cursor:pointer;" onclick="subscribeEmail(this)">Subscribe Free</button>
+              </div>
+            </div>
+
+          </aside>
+        </div><!-- end news-page-grid -->
+      </div><!-- end news-grid-view -->
+
+    </div><!-- end wrap -->
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section class="section bg-off">
-    <div class="wrap">
-      <span class="eyebrow">Student Stories</span>
-      <h2 class="section-title">What Nigerian Students<br/><span>Are Saying</span></h2>
-      <span class="rule"></span>
-      <div class="testi-grid">
-        <div class="testi-item">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I scored 312 in JAMB after practicing on Learn&amp;Pass every day for 3 weeks. The CBT simulation is exactly like the real thing. Best free resource I've found in Nigeria.</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=150&q=80&fit=crop&crop=face" alt="Adaeze"/>
-            <div><div class="name">Adaeze Nwosu</div><div class="role">JAMB 2024 — Lagos State</div></div>
-          </div>
-        </div>
-        <div class="testi-item">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">I used to fail my WAEC mock tests consistently. After one month on Learn&amp;Pass I got B2 in Mathematics and A1 in Biology. This platform truly works and it is truly free.</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?w=150&q=80&fit=crop&crop=face" alt="Emeka"/>
-            <div><div class="name">Emeka Obi</div><div class="role">WAEC 2024 — Enugu State</div></div>
-          </div>
-        </div>
-        <div class="testi-item">
-          <div class="testi-quote">"</div>
-          <p class="testi-text">The news section is brilliant. I found out about the JAMB rescheduled date before my school even announced it. Every SS3 student in Nigeria should know this platform exists.</p>
-          <div class="testi-author">
-            <img src="https://images.unsplash.com/photo-1523419409543-a5e549c1faa8?w=150&q=80&fit=crop&crop=face" alt="Fatima"/>
-            <div><div class="name">Fatima Garba</div><div class="role">SS3 — Kano State</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NEWS STRIP -->
-  <section class="section">
-    <div class="wrap">
-      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:14px;">
-        <div>
-          <span class="eyebrow">Education News</span>
-          <h2 class="section-title">Stay <span>Informed</span></h2>
-          <span class="rule"></span>
-        </div>
-        <a href="news.html" class="btn btn-outline" onclick="window.location='news.html'" style="margin-bottom:4px;">All News</a>
-      </div>
-      <div class="news-strip">
-        <div class="news-strip-item" onclick="window.location='news.html'">
-          <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/79b660de2_whatsapp_image_1287290096200321.jpg" alt="Nigerian secondary school student reading in classroom"/>
-          <div class="news-body">
-            <div class="news-cat">JAMB Update</div>
-            <h4>JAMB Announces 2025/2026 UTME Registration Deadline Extended</h4>
-            <div class="meta">April 28, 2026 &middot; 3 min read</div>
-          </div>
-        </div>
-        <div class="news-strip-item" onclick="window.location='news.html'">
-          <img src="https://i.ibb.co/fVPfj7Sd/photo-1649486116210-69085e3f164a.jpg" alt="Classroom"/>
-          <div class="news-body">
-            <div class="news-cat">WAEC</div>
-            <h4>WAEC 2026 WASSCE Timetable Released — Full Schedule</h4>
-            <div class="meta">April 26, 2026 &middot; 4 min read</div>
-          </div>
-        </div>
-        <div class="news-strip-item" onclick="window.location='news.html'">
-          <img src="https://i.ibb.co/dsmgBCRB/photo-1632215863153-0dae7657d0a9.jpg" alt="Exam hall"/>
-          <div class="news-body">
-            <div class="news-cat">NECO</div>
-            <h4>NECO Clarifies New Biometric Accreditation Policy for 2026</h4>
-            <div class="meta">April 24, 2026 &middot; 2 min read</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <div class="cta-band">
-    <div class="wrap">
-      <h2>Your Success Story<br/><span>Starts Right Here.</span></h2>
-      <p>Join over 12,000 Nigerian students using Learn&amp;Pass to prepare, practice and pass their exams — completely free.</p>
-      <div class="cta-btns">
-        <a href="cbt.html" class="btn btn-gold" onclick="window.location='cbt.html'">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Start CBT Practice Free
-        </a>
-        <a href="resources.html" class="btn btn-ghost" onclick="window.location='resources.html'">Browse Past Questions</a>
-      </div>
-    </div>
-  </div>
-
-</div><!-- end home -->
-
-<!-- ══════ ABOUT ══════ -->
+</div><!-- end pg-news -->
 </main>
 <footer>
   <div class="wrap">
@@ -1554,7 +1460,230 @@ document.addEventListener('click', function(e) {
     ham.classList.remove('open');
   }
 });
+var articles = [
+  {
+    slug: "jamb-extends-2026-utme-registration-deadline",
+    cat: "JAMB Update",
+    title: "JAMB Extends 2026 UTME Registration Deadline — New Date Confirmed",
+    author: "Chukwuemeka Eze",
+    date: "May 1, 2026",
+    read: "5 min read",
+    img: "https://i.ibb.co/qFk70N0r/photo-1628198661856-102874fb9d82.jpg",
+    body: `
+      <p>The Joint Admissions and Matriculation Board (JAMB) has officially announced an extension to the 2026 Unified Tertiary Matriculation Examination (UTME) registration deadline, moving the cutoff from June 2 to June 14, 2026. The decision follows sustained pressure from student groups, education stakeholders and state government representatives across Nigeria.</p>
+      <h3>Why Was the Deadline Extended?</h3>
+      <p>According to the board's statement, the extension was necessitated by reports of technical difficulties at accredited Computer Based Test (CBT) centres in several states, including Kano, Borno, Rivers and Anambra. Many candidates were unable to complete their biometric registration due to server overloads and internet connectivity problems in underserved areas.</p>
+      <div class="article-pull">"Every eligible candidate deserves a fair opportunity to register. We will not allow technical constraints to deny any Nigerian student access to tertiary education." — JAMB Registrar</div>
+      <h3>New Registration Window</h3>
+      <ul>
+        <li><strong>Old deadline:</strong> June 2, 2026</li>
+        <li><strong>New deadline:</strong> June 14, 2026</li>
+        <li><strong>Late registration surcharge:</strong> ₦500 additional fee applies</li>
+        <li><strong>Exam dates:</strong> Remain unchanged — July 4–18, 2026</li>
+      </ul>
+      <p>The board has also confirmed that there will be no further extension beyond June 14. Candidates who miss the revised deadline will not be eligible to sit the 2026 UTME and must wait until the 2027 cycle.</p>
+      <h3>How to Complete Your Registration</h3>
+      <p>Candidates yet to register should visit any accredited JAMB CBT centre with their National Identification Number (NIN), a valid passport photograph, and the required registration fee of ₦3,500 (plus the ₦500 late fee). The full list of accredited centres is available on the JAMB portal at jamb.gov.ng.</p>
+      <p>Learn&Pass strongly advises all pending candidates to begin their CBT practice immediately using our free platform. The JAMB exam is computer-based — familiarity with the interface is a significant advantage on exam day.</p>
+    `
+  },
+  {
+    slug: "waec-2026-wassce-timetable-released",
+    cat: "WAEC",
+    title: "WAEC 2026 WASSCE Timetable Released — Full Subject Schedule Inside",
+    author: "Ngozi Adeyemi",
+    date: "Apr 29, 2026",
+    read: "4 min read",
+    img: "https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg",
+    body: `
+      <p>The West African Examinations Council (WAEC) has released the official timetable for the 2026 West African Senior School Certificate Examination (WASSCE). The examination period runs from May 12 to June 28, 2026, covering all registered candidates across Nigeria, Ghana, Sierra Leone, Liberia and The Gambia.</p>
+      <h3>Key Dates at a Glance</h3>
+      <ul>
+        <li><strong>May 12, 2026</strong> — Mathematics (Paper 2 & Paper 1)</li>
+        <li><strong>May 14, 2026</strong> — English Language (Paper 2 & Paper 3)</li>
+        <li><strong>May 18, 2026</strong> — Biology (Paper 2 & Paper 1)</li>
+        <li><strong>May 21, 2026</strong> — Chemistry (Paper 2 & Paper 1)</li>
+        <li><strong>May 25, 2026</strong> — Physics (Paper 2 & Paper 1)</li>
+        <li><strong>May 28, 2026</strong> — Literature in English</li>
+        <li><strong>Jun 2, 2026</strong> — Economics (Paper 2 & Paper 1)</li>
+        <li><strong>Jun 28, 2026</strong> — Final papers conclude</li>
+      </ul>
+      <div class="article-pull">"Candidates are advised to note that no paper will be rescheduled for individual candidates who fail to attend due to preventable circumstances." — WAEC Nigeria</div>
+      <h3>What Candidates Must Bring</h3>
+      <p>All WAEC candidates are required to present their Examination Card, valid school ID, and a HB pencil alongside their pen. Electronic devices including phones, smartwatches and calculators (unless explicitly permitted for the subject) are strictly prohibited in examination halls.</p>
+      <p>WAEC has also warned against any form of examination malpractice, stating that candidates caught will face a 3-year ban from sitting any WAEC examination.</p>
+      <h3>Practice on Learn&Pass</h3>
+      <p>Our verified WAEC past question bank covers 2000–2024 for all core subjects. Start your CBT practice sessions today — the timed simulation mirrors the exact format and duration of each WAEC paper.</p>
+    `
+  },
+  {
+    slug: "neco-biometric-accreditation-policy-2026",
+    cat: "NECO",
+    title: "NECO Clarifies Biometric Accreditation Policy — What Every Candidate Must Do",
+    author: "Fatima Al-Hassan",
+    date: "Apr 27, 2026",
+    read: "3 min read",
+    img: "https://i.ibb.co/q3pnpDP5/photo-1694286080685-279d3b3c8dfb.jpg",
+    body: `
+      <p>The National Examinations Council (NECO) has issued a comprehensive clarification on its mandatory biometric accreditation policy for the 2026 Senior School Certificate Examination (SSCE). The council confirmed that all candidates who fail to complete accreditation before the examination will be denied access to examination halls.</p>
+      <h3>What is Biometric Accreditation?</h3>
+      <p>Biometric accreditation involves the capturing of a candidate's fingerprints, facial photograph and personal information into NECO's central database. The exercise is carried out at designated NECO accreditation centres across the country, typically located within or near secondary schools.</p>
+      <div class="article-pull">"There will be no exceptions. Biometric accreditation is mandatory for all candidates. Schools that fail to facilitate the exercise will bear responsibility for any candidate disqualifications." — NECO Registrar</div>
+      <h3>Accreditation Deadline</h3>
+      <p>The NECO accreditation window closes on June 20, 2026. Candidates registered for the 2026 SSCE must have completed their accreditation at their registered examination centres before this date.</p>
+      <h3>Steps to Complete Accreditation</h3>
+      <ol>
+        <li>Visit your school's NECO coordinator or examination officer</li>
+        <li>Confirm your registration number is active on the NECO portal (neco.gov.ng)</li>
+        <li>Present your National Identification Number (NIN) or birth certificate</li>
+        <li>Complete fingerprint and photograph capture at the designated device</li>
+        <li>Receive and keep your biometric accreditation slip</li>
+      </ol>
+      <p>Candidates who experience any difficulties with their biometric accreditation should report immediately to their school administration. NECO has established a dedicated helpline at 09-8765432 for unresolved issues.</p>
+    `
+  },
+  {
+    slug: "federal-government-minimum-score-university-admissions-2026",
+    cat: "Policy",
+    title: "Federal Government Approves New Minimum Score Policy for University Admissions",
+    author: "Emeka Nwachukwu",
+    date: "Apr 25, 2026",
+    read: "6 min read",
+    img: "https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg",
+    body: `
+      <p>The Federal Ministry of Education has announced a significant revision to the minimum JAMB cut-off mark framework governing university admissions in Nigeria. The new policy, effective for the 2026/2027 academic session, introduces differentiated cut-off marks based on institutional category and course of study.</p>
+      <h3>New Cut-off Mark Structure</h3>
+      <ul>
+        <li><strong>Federal Universities (STEM courses):</strong> Minimum 180</li>
+        <li><strong>Federal Universities (Arts & Humanities):</strong> Minimum 160</li>
+        <li><strong>State Universities:</strong> Minimum 150</li>
+        <li><strong>Private Universities:</strong> Minimum 140</li>
+        <li><strong>Polytechnics & Colleges of Education:</strong> Minimum 120</li>
+      </ul>
+      <div class="article-pull">"We are raising standards not to exclude students but to ensure that the degrees our universities confer have real and recognised value." — Minister of Education</div>
+      <h3>What This Means for Candidates</h3>
+      <p>Candidates who score below the minimum for their institution of first choice will no longer be automatically considered for Direct Entry or alternative admission pathways through the same institution. However, they retain the right to change their institution choice to one with a lower cut-off before the JAMB change-of-institution window opens.</p>
+      <h3>Reactions from Education Stakeholders</h3>
+      <p>The policy has received mixed reactions. The Academic Staff Union of Universities (ASUU) has broadly welcomed the move as a step toward restoring academic standards. Several student union bodies, however, have raised concerns about the impact on students from rural areas and low-income backgrounds where access to quality exam preparation is limited.</p>
+      <p>Learn&Pass was built precisely for this reality. Our platform gives every Nigerian student — regardless of location or income — access to the same high-quality exam practice tools.</p>
+    `
+  },
+  {
+    slug: "federal-government-scholarship-2026-applications-open",
+    cat: "Scholarship",
+    title: "2026 Federal Government Scholarship Applications Now Open — Full Eligibility Guide",
+    author: "Aisha Mohammed",
+    date: "Apr 23, 2026",
+    read: "7 min read",
+    img: "https://i.ibb.co/qF3zr88g/photo-1649486116205-71c92cf5160f.jpg",
+    body: `
+      <p>The Federal Government of Nigeria, through the Scholarship Board under the Ministry of Education, has officially opened applications for the 2026 Bilateral Education Agreement (BEA) Scholarship Programme. This annual scholarship funds Nigerian students to pursue undergraduate and postgraduate programmes in partner countries including Russia, China, Hungary, Morocco, and Cuba.</p>
+      <h3>Scholarship Categories Available</h3>
+      <ul>
+        <li><strong>Undergraduate (New):</strong> For JAMB candidates with a minimum score of 200</li>
+        <li><strong>Undergraduate (Renewal):</strong> For current BEA scholars maintaining a minimum GPA of 3.0</li>
+        <li><strong>Postgraduate:</strong> Open to Nigerian graduates with at least Second Class Upper</li>
+      </ul>
+      <div class="article-pull">"The Bilateral Education Agreement is Nigeria's commitment to ensuring that brilliant but financially disadvantaged students have a pathway to world-class education." — Scholarship Board Director</div>
+      <h3>Eligibility Requirements</h3>
+      <ol>
+        <li>Nigerian citizenship (must hold valid Nigerian passport)</li>
+        <li>Age: Not more than 25 years for undergraduate, 35 for postgraduate</li>
+        <li>O'Level: Minimum 5 credits including English and Mathematics in one sitting</li>
+        <li>JAMB Score: Minimum 200 (for new undergraduate applicants)</li>
+        <li>Medical fitness certificate from a government hospital</li>
+      </ol>
+      <h3>How to Apply</h3>
+      <p>Applications are submitted exclusively online through the Federal Scholarship Board portal at scholarships.gov.ng. The application window is open from April 23 to July 31, 2026. No applications will be accepted after the deadline under any circumstance.</p>
+      <h3>Available Countries and Courses</h3>
+      <p>Russia offers slots in Medicine, Engineering and Natural Sciences. China provides opportunities in Engineering, IT and Business. Hungary focuses on Agricultural Sciences and Medicine. Morocco covers Islamic Studies, Law and Social Sciences. Cuba specialises in Medicine and Sports Science.</p>
+      <p>Preparing for JAMB now? Start your free CBT practice on Learn&Pass to hit the 200+ score you need to qualify.</p>
+    `
+  },
+  {
+    slug: "how-to-check-jamb-2025-result-and-request-remark",
+    cat: "JAMB",
+    title: "How to Check Your JAMB 2025 Result and Request a Remark — Step by Step",
+    author: "Chukwuemeka Eze",
+    date: "Apr 20, 2026",
+    read: "4 min read",
+    img: "https://i.ibb.co/fVzvWG2p/photo-1543579281-eeacc097d696.jpg",
+    body: `
+      <p>Thousands of 2025 UTME candidates are still navigating the process of checking their results and, where necessary, requesting a remark. This guide consolidates everything into a clear, step-by-step process so you spend less time confused and more time planning your next move.</p>
+      <h3>How to Check Your 2025 JAMB Result</h3>
+      <ol>
+        <li>Visit the official JAMB portal: <strong>jamb.gov.ng</strong></li>
+        <li>Click on "Check Result" from the homepage menu</li>
+        <li>Enter your JAMB registration number (11 digits)</li>
+        <li>Enter your date of birth in the format DD/MM/YYYY</li>
+        <li>Click "Check Result" — your score will be displayed per subject</li>
+      </ol>
+      <div class="article-pull">"If your result is withheld, do not panic. Visit your JAMB state office immediately with your examination ID card and a printout of the withheld result page."</div>
+      <h3>How to Request a Remark</h3>
+      <p>Candidates who believe their result is inaccurate can formally request a remark. Note that this is a paid service and the fee is non-refundable regardless of outcome.</p>
+      <ol>
+        <li>Log in to your JAMB candidate portal at candidates.jamb.gov.ng</li>
+        <li>Navigate to "Services" → "Request Remark"</li>
+        <li>Pay the remark fee of ₦2,000 via the portal</li>
+        <li>Submit your remark request — you will receive a reference number</li>
+        <li>Results of the remark are typically released within 30 working days</li>
+      </ol>
+      <h3>Common Reasons Results Are Withheld</h3>
+      <ul>
+        <li>Biometric data mismatch (fingerprint not captured at sitting)</li>
+        <li>Reported examination malpractice investigation</li>
+        <li>Outstanding document verification issues</li>
+        <li>System errors during the examination session</li>
+      </ul>
+      <p>If you are preparing for the 2026 UTME, start your free CBT practice sessions on Learn&Pass today. Our platform is built to simulate the exact JAMB computer-based test environment — so you walk in on exam day with full confidence.</p>
+    `
+  }
+];
 
+function openArticle(idx) {
+  var a = articles[idx];
+  var html = '<div class="article-cat-badge">' + a.cat + '</div>' +
+    '<h1 class="article-title">' + a.title + '</h1>' +
+    '<div class="article-meta">' +
+      '<span class="author">' + a.author + '</span>' +
+      '<span class="dot"></span>' +
+      '<span>' + a.date + '</span>' +
+      '<span class="dot"></span>' +
+      '<span>' + a.read + '</span>' +
+    '</div>' +
+    '<img class="article-featured-img" src="' + a.img + '" alt="' + a.title + '"/>' +
+    '<div class="article-body">' + a.body + '</div>' +
+    '<div class="article-share">' +
+      '<span>Share:</span>' +
+      '<button class="share-btn" onclick="shareTwitter()">Twitter / X</button>' +
+      '<button class="share-btn" onclick="shareWhatsApp()">WhatsApp</button>' +
+      '<button class="share-btn" onclick="copyLink()">Copy Link</button>' +
+    '</div>';
+  document.getElementById('article-content').innerHTML = html;
+  document.getElementById('article-view').style.display = 'block';
+  document.getElementById('news-grid-view').style.display = 'none';
+  window.scrollTo(0,0);
+  // update URL hash
+  history.pushState(null, '', '#' + a.slug);
+}
+
+function closeArticle() {
+  document.getElementById('article-view').style.display = 'none';
+  document.getElementById('news-grid-view').style.display = 'block';
+  history.pushState(null, '', '#news');
+}
+
+function filterNews(cat, btn) {
+  document.querySelectorAll('.nf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[data-cat]').forEach(function(el) {
+    if (cat === 'all' || el.getAttribute('data-cat') === cat) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
 </script>
 </body>
 </html>
