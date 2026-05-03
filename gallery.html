@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Learn&Pass — Image Gallery (Hidden)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --green:#006633; --gold:#FFCC00; --ink:#1e1e1e; --muted:#777; --line:#dcdcdc; --bg:#f5f5f3; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); }
+
+    .header { background:var(--green); border-bottom:4px solid var(--gold); padding:24px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+    .header h1 { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; color:#fff; }
+    .header h1 span { color:var(--gold); }
+    .header-sub { font-size:12px; color:rgba(255,255,255,.55); margin-top:4px; }
+    .confidential { background:#b00; color:#fff; font-size:10px; font-weight:800; letter-spacing:2px; padding:4px 12px; text-transform:uppercase; border-radius:2px; }
+
+    .stats-bar { background:var(--gold); padding:12px 32px; font-size:12px; font-weight:800; color:var(--green); display:flex; gap:28px; flex-wrap:wrap; }
+
+    .wrap { max-width:1280px; margin:0 auto; padding:36px 24px 80px; }
+
+    .summary { background:#fff; border:1px solid var(--line); border-top:4px solid var(--gold); padding:22px 28px; margin-bottom:40px; display:flex; gap:40px; flex-wrap:wrap; }
+    .stat .n { font-family:'Playfair Display',serif; font-size:34px; font-weight:900; color:var(--green); line-height:1; }
+    .stat .l { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; margin-top:4px; }
+
+    .section-label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:#fff; background:var(--green); padding:10px 16px; margin:44px 0 18px; display:flex; align-items:center; justify-content:space-between; border-left:5px solid var(--gold); }
+    .section-label span { font-size:10px; color:rgba(255,255,255,.6); font-weight:600; letter-spacing:.5px; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+
+    .card { background:#fff; border:1px solid var(--line); overflow:hidden; position:relative; }
+    .card-img { overflow:hidden; position:relative; }
+    .card-img img { width:100%; height:220px; object-fit:cover; display:block; transition:transform .3s ease; }
+    .card:hover .card-img img { transform:scale(1.04); }
+    .card-body { padding:13px 15px 16px; border-top:3px solid var(--green); }
+    .card-body.gold { border-top-color:var(--gold); }
+    .name { font-size:12px; font-weight:800; color:var(--ink); text-transform:uppercase; letter-spacing:.5px; margin-bottom:5px; }
+    .src { font-size:10px; color:#aaa; font-family:monospace; word-break:break-all; margin-top:6px; }
+
+    .badge { display:inline-block; font-size:9px; font-weight:800; padding:3px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:.8px; margin-bottom:7px; margin-right:4px; }
+    .b-ibb  { background:rgba(0,102,51,.1); color:var(--green); }
+    .b-up   { background:rgba(255,204,0,.3); color:#7a5500; }
+    .b-kept { background:#eee; color:#555; }
+    .b-use  { background:var(--green); color:#fff; }
+
+    .in-use { position:absolute; top:10px; left:10px; background:var(--green); color:#fff; font-size:9px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; }
+    .num-tag { position:absolute; top:10px; right:10px; background:rgba(0,0,0,.65); color:#fff; font-size:11px; font-weight:800; padding:4px 10px; }
+
+    .note { margin-top:48px; padding:20px 24px; background:#fff; border:1px solid var(--line); border-left:5px solid var(--gold); font-size:13px; color:var(--muted); line-height:1.75; }
+    .note strong { color:var(--ink); }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Learn<span>&</span>Pass — Image Gallery</h1>
+    <div class="header-sub">Internal review page · Not linked from main site · v4 — May 1, 2026</div>
+  </div>
+  <div class="confidential">🔒 Hidden Page</div>
+</div>
+
+<div class="stats-bar">
+  <span>📁 Total: 29 images</span>
+  <span>📤 Your Uploads: 4</span>
+  <span>🔗 Your ibb.co Links: 18</span>
+  <span>✅ Kept from before: 3</span>
+  <span>🟢 Active on Site: 7</span>
+</div>
+
+<div class="wrap">
+
+  <div class="summary">
+    <div class="stat"><div class="n">29</div><div class="l">Total Images</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">Your WhatsApp Uploads</div></div>
+    <div class="stat"><div class="n">18</div><div class="l">Your ibb.co Downloads</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Kept from Previous</div></div>
+    <div class="stat"><div class="n">7</div><div class="l">Active on Site</div></div>
+  </div>
+
+  <!-- YOUR WHATSAPP UPLOADS -->
+  <div class="section-label">📤 Your WhatsApp Uploads — 4 photos <span>ACTIVE ON SITE</span></div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/79b660de2_whatsapp_image_1287290096200321.jpg" alt="Nigerian Classroom"/>
+        <div class="in-use">✅ Active</div>
+        <div class="num-tag">WA-1</div>
+      </div>
+      <div class="card-body gold">
+        <span class="badge b-up">Your Upload</span><span class="badge b-use">Active</span>
+        <div class="name">WA-1 · Nigerian Classroom</div>
+        <div class="src">Hero section + News JAMB card</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/32ce3644d_whatsapp_image_1740874493741517.jpg" alt="Group Study"/>
+        <div class="in-use">✅ Active</div>
+        <div class="num-tag">WA-2</div>
+      </div>
+      <div class="card-body gold">
+        <span class="badge b-up">Your Upload</span><span class="badge b-use">Active</span>
+        <div class="name">WA-2 · Group Study Women</div>
+        <div class="src">CBT Module + About values section</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/54a5e5c64_whatsapp_image_1311914907560218.jpg" alt="Schoolboy"/>
+        <div class="in-use">✅ Active</div>
+        <div class="num-tag">WA-3</div>
+      </div>
+      <div class="card-body gold">
+        <span class="badge b-up">Your Upload</span><span class="badge b-use">Active</span>
+        <div class="name">WA-3 · Schoolboy at Desk</div>
+        <div class="src">How It Works — Step 3</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-img">
+        <img src="https://media.base44.com/images/public/whatsapp/69f0ed2f198302a124a4d968/your_agent/69f0ed2f198302a124a4d969/a71b64dfa_whatsapp_image_1292932678885555.jpg" alt="Young Africans"/>
+        <div class="in-use">✅ Active</div>
+        <div class="num-tag">WA-4</div>
+      </div>
+      <div class="card-body gold">
+        <span class="badge b-up">Your Upload</span><span class="badge b-use">Active</span>
+        <div class="name">WA-4 · Young Africans Group</div>
+        <div class="src">How It Works — Step 2</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- YOUR IBB.CO DOWNLOADS -->
+  <div class="section-label">🔗 Your ibb.co Downloads — 18 photos <span>DOWNLOADED FROM YOUR LINKS</span></div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/qFk70N0r/photo-1628198661856-102874fb9d82.jpg" alt="ibb_01"/><div class="num-tag">01</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_01</div><div class="src">ibb.co/x8JXm1m7</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg" alt="ibb_02"/><div class="num-tag">02</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_02</div><div class="src">ibb.co/gLs6KHDW</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/q3pnpDP5/photo-1694286080685-279d3b3c8dfb.jpg" alt="ibb_03"/><div class="num-tag">03</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_03</div><div class="src">ibb.co/21d6dFfN</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg" alt="ibb_04"/><div class="num-tag">04</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_04</div><div class="src">ibb.co/dYbhXrD</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/qF3zr88g/photo-1649486116205-71c92cf5160f.jpg" alt="ibb_05"/><div class="num-tag">05</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_05</div><div class="src">ibb.co/LhXMZyyg</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/fVzvWG2p/photo-1543579281-eeacc097d696.jpg" alt="ibb_06"/><div class="num-tag">06</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_06</div><div class="src">ibb.co/twTX6P4s</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/Q39FssJD/photo-1744809495173-217ca4faa8bc.jpg" alt="ibb_07"/><div class="num-tag">07</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_07</div><div class="src">ibb.co/sdjvLLgW</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/chhhSjfM/photo-1529390079861-591de354faf5.jpg" alt="ibb_08"/><div class="num-tag">08</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_08</div><div class="src">ibb.co/xqqqtN9P</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/fVPfj7Sd/photo-1649486116210-69085e3f164a.jpg" alt="ibb_09"/><div class="num-tag">09</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_09</div><div class="src">ibb.co/4w5zhxfR</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/dsmgBCRB/photo-1632215863153-0dae7657d0a9.jpg" alt="ibb_10"/><div class="num-tag">10</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_10</div><div class="src">ibb.co/XfY8X0qX</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/21CXTtwP/photo-1740986188924-848b381977e6.jpg" alt="ibb_11"/><div class="num-tag">11</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_11</div><div class="src">ibb.co/ycZLryD5</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/Jjj0Mt3m/photo-1744809448493-448812255e4d.jpg" alt="ibb_12"/><div class="num-tag">12</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_12</div><div class="src">ibb.co/5hhtf4KG</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/zTfXgPGH/photo-1717934447819-6d65eb0e70fa.jpg" alt="ibb_13"/><div class="num-tag">13</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_13</div><div class="src">ibb.co/JwkvTr5F</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/cXX4wBCd/photo-1666281134747-caa676fc2201.jpg" alt="ibb_14"/><div class="num-tag">14</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_14</div><div class="src">ibb.co/KzzTDPLH</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/1pWL8Gs/photo-1687794504223-8bdc02e25ef6.jpg" alt="ibb_15"/><div class="num-tag">15</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_15</div><div class="src">ibb.co/jxXTgkV</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/0y0QfqRW/photo-1744809463771-dca1b7bf46ac.jpg" alt="ibb_16"/><div class="num-tag">16</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_16</div><div class="src">ibb.co/pjHn32Bs</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/pvRhfdHf/photo-1539893867126-7ce0b48971ca.jpg" alt="ibb_17"/><div class="num-tag">17</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_17</div><div class="src">ibb.co/JRy3vHYv</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://i.ibb.co/rf6XJ1rR/photo-1632932693914-89b90ae3d16d.jpg" alt="ibb_18"/><div class="num-tag">18</div></div>
+      <div class="card-body"><span class="badge b-ibb">ibb.co</span><div class="name">ibb_18</div><div class="src">ibb.co/S7nZp9C4</div></div>
+    </div>
+
+  </div>
+
+  <!-- KEPT FROM BEFORE -->
+  <div class="section-label">✅ Kept from Previous Library — 3 photos <span>classroom_1 · library_1 · reading_3</span></div>
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80&fit=crop" alt="classroom_1"/><div class="in-use">✅ Active</div></div>
+      <div class="card-body"><span class="badge b-kept">Kept</span><span class="badge b-use">Active</span><div class="name">classroom_1</div><div class="src">Nigerian students in classroom — About intro section</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&q=80&fit=crop" alt="library_1"/></div>
+      <div class="card-body"><span class="badge b-kept">Kept</span><div class="name">library_1</div><div class="src">Library shelves with books — Resources page</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-img"><img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&q=80&fit=crop" alt="reading_3"/></div>
+      <div class="card-body"><span class="badge b-kept">Kept</span><div class="name">reading_3</div><div class="src">Student in library — quiet individual study</div></div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>Mr. X — Next step:</strong> Review all 18 ibb.co images above by their number (01–18). Tell me which ones to keep and where to use each — or just approve the whole set and I'll assign them across the site. Once confirmed I'll update the main site and redeploy to Vercel.
+  </div>
+
+</div>
+</body>
+</html>

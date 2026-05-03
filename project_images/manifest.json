@@ -1,0 +1,27 @@
+{
+  "ibb": {
+    "ibb_01": "https://i.ibb.co/qFk70N0r/photo-1628198661856-102874fb9d82.jpg",
+    "ibb_02": "https://i.ibb.co/ZpyNDthg/photo-1667844141324-61585c18b0df.jpg",
+    "ibb_03": "https://i.ibb.co/q3pnpDP5/photo-1694286080685-279d3b3c8dfb.jpg",
+    "ibb_04": "https://i.ibb.co/JJxh8KH/photo-1729691031598-a97244ce0503.jpg",
+    "ibb_05": "https://i.ibb.co/qF3zr88g/photo-1649486116205-71c92cf5160f.jpg",
+    "ibb_06": "https://i.ibb.co/fVzvWG2p/photo-1543579281-eeacc097d696.jpg",
+    "ibb_07": "https://i.ibb.co/Q39FssJD/photo-1744809495173-217ca4faa8bc.jpg",
+    "ibb_08": "https://i.ibb.co/chhhSjfM/photo-1529390079861-591de354faf5.jpg",
+    "ibb_09": "https://i.ibb.co/fVPfj7Sd/photo-1649486116210-69085e3f164a.jpg",
+    "ibb_10": "https://i.ibb.co/dsmgBCRB/photo-1632215863153-0dae7657d0a9.jpg",
+    "ibb_11": "https://i.ibb.co/21CXTtwP/photo-1740986188924-848b381977e6.jpg",
+    "ibb_12": "https://i.ibb.co/Jjj0Mt3m/photo-1744809448493-448812255e4d.jpg",
+    "ibb_13": "https://i.ibb.co/zTfXgPGH/photo-1717934447819-6d65eb0e70fa.jpg",
+    "ibb_14": "https://i.ibb.co/cXX4wBCd/photo-1666281134747-caa676fc2201.jpg",
+    "ibb_15": "https://i.ibb.co/1pWL8Gs/photo-1687794504223-8bdc02e25ef6.jpg",
+    "ibb_16": "https://i.ibb.co/0y0QfqRW/photo-1744809463771-dca1b7bf46ac.jpg",
+    "ibb_17": "https://i.ibb.co/pvRhfdHf/photo-1539893867126-7ce0b48971ca.jpg",
+    "ibb_18": "https://i.ibb.co/rf6XJ1rR/photo-1632932693914-89b90ae3d16d.jpg"
+  },
+  "unsplash": {
+    "classroom_1": "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&fit=crop",
+    "library_1": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80&fit=crop",
+    "reading_3": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80&fit=crop"
+  }
+}
