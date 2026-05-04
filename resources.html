@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources | Learn&amp;Pass — 9jaExamGuru</title>
-  <meta name="description" content="Learn&amp;Pass — Free JAMB, WAEC, NECO &amp; GCE exam preparation for Nigerian students.">
+  <meta name="description" content="Free JAMB, WAEC, NECO &amp; GCE past questions with worked solutions.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23006633'/><text x='50%25' y='55%25' font-size='14' text-anchor='middle' dominant-baseline='middle' fill='%23FFCC00' font-family='Georgia,serif' font-weight='bold'>LP</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
+
 
 /* ── ROOT ── */
 :root {
@@ -1144,6 +1144,43 @@ p { color: var(--body); }
   .news-card-img img { height: 180px; width: 100%; }
 }
 
+  
+.exam-tiles { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--line); margin-bottom:0; }
+.exam-tile { padding:24px 20px; cursor:pointer; border-right:1px solid var(--line); transition:background .15s; text-align:center; }
+.exam-tile:last-child { border-right:none; }
+.exam-tile:hover, .exam-tile.active-tile { background:var(--green); }
+.exam-tile:hover .et-badge, .exam-tile.active-tile .et-badge { background:rgba(255,255,255,.2); color:#fff; }
+.exam-tile:hover .et-name, .exam-tile.active-tile .et-name, .exam-tile:hover .et-count, .exam-tile.active-tile .et-count { color:#fff; }
+.et-badge { display:inline-block; font-size:10px; font-weight:900; letter-spacing:2px; padding:4px 12px; margin-bottom:8px; border-radius:2px; }
+.et-green { background:#e8f5ee; color:var(--green); }
+.et-blue  { background:#e8edf5; color:#1a3a6b; }
+.et-gold  { background:#fffbe6; color:#a07800; }
+.et-red   { background:#fdecea; color:#b91c1c; }
+.et-name  { font-family:'Playfair Display',serif; font-size:18px; font-weight:900; color:var(--black); }
+.et-count { font-size:11px; color:var(--muted); margin-top:4px; font-weight:600; }
+.subj-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:var(--line); }
+.subj-card { background:#fff; padding:20px 16px; cursor:pointer; transition:background .15s; }
+.subj-card:hover { background:var(--bg); }
+.subj-icon { font-size:22px; margin-bottom:8px; }
+.subj-name { font-family:'Playfair Display',serif; font-size:14px; font-weight:900; color:var(--black); margin-bottom:4px; }
+.subj-meta { font-size:11px; color:var(--muted); font-weight:600; margin-bottom:10px; }
+.subj-years { display:flex; flex-wrap:wrap; gap:4px; }
+.subj-years span { background:var(--bg); border:1px solid var(--line); font-size:10px; font-weight:700; padding:2px 8px; color:var(--muted); }
+.q-item { border:1px solid var(--line); border-bottom:none; padding:20px 24px; background:#fff; }
+.q-item:last-child { border-bottom:1px solid var(--line); }
+.q-num { font-size:10px; font-weight:800; letter-spacing:2px; color:var(--muted); text-transform:uppercase; margin-bottom:8px; }
+.q-text { font-size:15px; color:var(--black); line-height:1.65; margin-bottom:14px; }
+.q-options { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+.q-opt { border:1px solid var(--line); padding:9px 14px; font-size:13px; cursor:pointer; transition:background .15s; border-radius:2px; }
+.q-opt:hover { background:var(--bg); }
+.q-opt.correct { background:#e8f5ee; border-color:var(--green); color:var(--green); font-weight:700; }
+.q-opt.wrong   { background:#fdecea; border-color:#dc2626; color:#dc2626; }
+.q-ans { font-size:12px; color:var(--green); font-weight:700; margin-top:8px; display:none; }
+.yr-btn { border:1px solid var(--line); background:#fff; padding:7px 16px; font-size:12px; font-weight:700; cursor:pointer; transition:all .15s; }
+.yr-btn:hover, .yr-btn.active { background:var(--green); color:#fff; border-color:var(--green); }
+@media(max-width:900px){ .subj-grid{ grid-template-columns:repeat(3,1fr); } .exam-tiles{ grid-template-columns:repeat(2,1fr); } .exam-tile:nth-child(2){ border-right:none; } .exam-tile:nth-child(3){ border-top:1px solid var(--line); } }
+@media(max-width:600px){ .subj-grid{ grid-template-columns:repeat(2,1fr); } .exam-tiles{ grid-template-columns:repeat(2,1fr); } .q-options{ grid-template-columns:1fr; } }
+
   </style>
 </head>
 <body>
@@ -1160,12 +1197,7 @@ p { color: var(--body); }
       <div class="nav-logo-text">Learn<span>&amp;</span>Pass</div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resources.html" class="active">Resources</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-      <a href="cbt.html" class="nav-cta-btn">Practice CBT</a>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="resources.html" class="active">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a><a href="cbt.html" class="nav-cta-btn">Practice CBT</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1181,9 +1213,204 @@ p { color: var(--body); }
   </div>
 </nav>
 <main>
-<div class="page-hero"><div class="wrap"><div class="bc">Home / <span>Resources</span></div><h1>Exam <span>Resources</span></h1><p>JAMB, WAEC, NECO question banks with full archive and worked solutions.</p></div></div>
-  <div class="cs"><h2>Resources Page</h2><p>Awaiting approval of Home &amp; About to proceed 🎯</p><br/><button class="btn btn-primary" onclick="window.location='index.html'">Back to Home</button></div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="bc"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Resources</span></div>
+    <h1>Exam <span>Resources</span></h1>
+    <p>50,000+ verified past questions for JAMB, WAEC, NECO &amp; GCE — with full worked solutions.</p>
+  </div>
 </div>
+
+<!-- EXAM SELECTOR TABS -->
+<section class="section">
+  <div class="wrap">
+
+    <div class="exam-tiles">
+      <div class="exam-tile active-tile" id="tile-jamb" onclick="switchExam('jamb', this)">
+        <div class="exam-tile-body">
+          <div class="et-badge et-green">JAMB</div>
+          <div class="et-name">UTME</div>
+          <div class="et-count">12,400+ questions</div>
+        </div>
+      </div>
+      <div class="exam-tile" id="tile-waec" onclick="switchExam('waec', this)">
+        <div class="exam-tile-body">
+          <div class="et-badge et-blue">WAEC</div>
+          <div class="et-name">WASSCE</div>
+          <div class="et-count">18,200+ questions</div>
+        </div>
+      </div>
+      <div class="exam-tile" id="tile-neco" onclick="switchExam('neco', this)">
+        <div class="exam-tile-body">
+          <div class="et-badge et-gold">NECO</div>
+          <div class="et-name">SSCE</div>
+          <div class="et-count">9,600+ questions</div>
+        </div>
+      </div>
+      <div class="exam-tile" id="tile-gce" onclick="switchExam('gce', this)">
+        <div class="exam-tile-body">
+          <div class="et-badge et-red">GCE</div>
+          <div class="et-name">NABTEB</div>
+          <div class="et-count">6,800+ questions</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBJECT GRID -->
+    <div id="exam-panel" style="margin-top:48px;">
+
+      <!-- JAMB -->
+      <div class="subj-panel" id="panel-jamb">
+        <div class="section-title" style="margin-bottom:28px;">JAMB / UTME — <span>Select a Subject</span></div>
+        <div class="subj-grid">
+          <div class="subj-card" onclick="openSubject('jamb','English Language')">
+            <div class="subj-icon">📝</div>
+            <div class="subj-name">English Language</div>
+            <div class="subj-meta">2,400 questions · 2005–2024</div>
+            <div class="subj-years">
+              <span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span>
+            </div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Mathematics')">
+            <div class="subj-icon">🔢</div>
+            <div class="subj-name">Mathematics</div>
+            <div class="subj-meta">2,200 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Biology')">
+            <div class="subj-icon">🧬</div>
+            <div class="subj-name">Biology</div>
+            <div class="subj-meta">1,980 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Chemistry')">
+            <div class="subj-icon">⚗️</div>
+            <div class="subj-name">Chemistry</div>
+            <div class="subj-meta">1,800 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Physics')">
+            <div class="subj-icon">⚡</div>
+            <div class="subj-name">Physics</div>
+            <div class="subj-meta">1,760 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Economics')">
+            <div class="subj-icon">📊</div>
+            <div class="subj-name">Economics</div>
+            <div class="subj-meta">1,600 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Government')">
+            <div class="subj-icon">🏛️</div>
+            <div class="subj-name">Government</div>
+            <div class="subj-meta">1,540 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Literature in English')">
+            <div class="subj-icon">📚</div>
+            <div class="subj-name">Literature in English</div>
+            <div class="subj-meta">1,200 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Accounting')">
+            <div class="subj-icon">🧾</div>
+            <div class="subj-name">Accounting</div>
+            <div class="subj-meta">1,100 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Geography')">
+            <div class="subj-icon">🌍</div>
+            <div class="subj-name">Geography</div>
+            <div class="subj-meta">980 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Christian Religious Studies')">
+            <div class="subj-icon">✝️</div>
+            <div class="subj-name">C.R.S</div>
+            <div class="subj-meta">900 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+          <div class="subj-card" onclick="openSubject('jamb','Islamic Religious Studies')">
+            <div class="subj-icon">☪️</div>
+            <div class="subj-name">I.R.S</div>
+            <div class="subj-meta">860 questions · 2005–2024</div>
+            <div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+19 yrs</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WAEC -->
+      <div class="subj-panel" id="panel-waec" style="display:none;">
+        <div class="section-title" style="margin-bottom:28px;">WAEC / WASSCE — <span>Select a Subject</span></div>
+        <div class="subj-grid">
+          <div class="subj-card" onclick="openSubject('waec','English Language')"><div class="subj-icon">📝</div><div class="subj-name">English Language</div><div class="subj-meta">3,100 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Mathematics')"><div class="subj-icon">🔢</div><div class="subj-name">Mathematics</div><div class="subj-meta">2,900 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Biology')"><div class="subj-icon">🧬</div><div class="subj-name">Biology</div><div class="subj-meta">2,600 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Chemistry')"><div class="subj-icon">⚗️</div><div class="subj-name">Chemistry</div><div class="subj-meta">2,400 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Physics')"><div class="subj-icon">⚡</div><div class="subj-name">Physics</div><div class="subj-meta">2,200 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Economics')"><div class="subj-icon">📊</div><div class="subj-name">Economics</div><div class="subj-meta">2,000 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Government')"><div class="subj-icon">🏛️</div><div class="subj-name">Government</div><div class="subj-meta">1,800 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('waec','Literature in English')"><div class="subj-icon">📚</div><div class="subj-name">Literature in English</div><div class="subj-meta">1,600 questions · 2000–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+24 yrs</span></div></div>
+        </div>
+      </div>
+
+      <!-- NECO -->
+      <div class="subj-panel" id="panel-neco" style="display:none;">
+        <div class="section-title" style="margin-bottom:28px;">NECO / SSCE — <span>Select a Subject</span></div>
+        <div class="subj-grid">
+          <div class="subj-card" onclick="openSubject('neco','English Language')"><div class="subj-icon">📝</div><div class="subj-name">English Language</div><div class="subj-meta">1,800 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('neco','Mathematics')"><div class="subj-icon">🔢</div><div class="subj-name">Mathematics</div><div class="subj-meta">1,600 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('neco','Biology')"><div class="subj-icon">🧬</div><div class="subj-name">Biology</div><div class="subj-meta">1,400 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('neco','Chemistry')"><div class="subj-icon">⚗️</div><div class="subj-name">Chemistry</div><div class="subj-meta">1,200 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('neco','Physics')"><div class="subj-icon">⚡</div><div class="subj-name">Physics</div><div class="subj-meta">1,100 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('neco','Economics')"><div class="subj-icon">📊</div><div class="subj-name">Economics</div><div class="subj-meta">960 questions · 2004–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+20 yrs</span></div></div>
+        </div>
+      </div>
+
+      <!-- GCE -->
+      <div class="subj-panel" id="panel-gce" style="display:none;">
+        <div class="section-title" style="margin-bottom:28px;">GCE / NABTEB — <span>Select a Subject</span></div>
+        <div class="subj-grid">
+          <div class="subj-card" onclick="openSubject('gce','English Language')"><div class="subj-icon">📝</div><div class="subj-name">English Language</div><div class="subj-meta">1,200 questions · 2008–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+16 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('gce','Mathematics')"><div class="subj-icon">🔢</div><div class="subj-name">Mathematics</div><div class="subj-meta">1,100 questions · 2008–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+16 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('gce','Biology')"><div class="subj-icon">🧬</div><div class="subj-name">Biology</div><div class="subj-meta">980 questions · 2008–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+16 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('gce','Chemistry')"><div class="subj-icon">⚗️</div><div class="subj-name">Chemistry</div><div class="subj-meta">900 questions · 2008–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+16 yrs</span></div></div>
+          <div class="subj-card" onclick="openSubject('gce','Physics')"><div class="subj-icon">⚡</div><div class="subj-name">Physics</div><div class="subj-meta">840 questions · 2008–2024</div><div class="subj-years"><span>2024</span><span>2023</span><span>2022</span><span>+16 yrs</span></div></div>
+        </div>
+      </div>
+
+    </div><!-- end #exam-panel -->
+
+    <!-- YEAR FILTER (shown when subject selected) -->
+    <div id="year-panel" style="display:none; margin-top:44px;">
+      <div class="track-inner" style="align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:32px;">
+        <button class="btn btn-ghost" onclick="closeSubject()" style="font-size:12px;">&#8592; Back to Subjects</button>
+        <div id="year-panel-title" class="section-title" style="margin:0;"></div>
+      </div>
+      <div id="year-filter-row" style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px;"></div>
+      <div id="questions-list"></div>
+      <div style="text-align:center; margin-top:36px;">
+        <a href="cbt.html" class="btn btn-primary" style="font-size:14px; padding:14px 36px;">
+          &#9654; Practice This Subject in CBT Mode
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap" style="text-align:center;">
+    <h2 style="color:#fff; font-family:'Playfair Display',serif; font-size:clamp(22px,4vw,34px); margin-bottom:12px;">Ready to test your knowledge?</h2>
+    <p style="color:rgba(255,255,255,.8); margin-bottom:28px;">Take a timed CBT exam now — just like the real thing.</p>
+    <a href="cbt.html" class="btn btn-gold" style="font-size:15px; padding:14px 40px;">Start CBT Practice &rarr;</a>
+  </div>
+</div>
+
 </main>
 <footer class="footer">
   <div class="footer-main">
@@ -1218,9 +1445,10 @@ p { color: var(--body); }
       <li><a href="contact.html">Report an Error</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
+  <div class="footer-bottom">&copy; 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
 </footer>
 <script>
+
 
 function toggleMob() {
   var m = document.getElementById('mnav');
@@ -1262,6 +1490,122 @@ function showToast(msg) {
   t.style.opacity = '1';
   clearTimeout(t._timer);
   t._timer = setTimeout(function(){ t.style.opacity = '0'; }, 3000);
+}
+
+
+var questions = {
+  jamb: {
+    "English Language": [
+      { y:2024, q:"In the sentence \"The committee has reached its decision\", the word \"committee\" is:", opts:["A. Collective noun","B. Proper noun","C. Abstract noun","D. Material noun"], ans:"A", exp:"A committee is a group of people, making it a collective noun." },
+      { y:2024, q:"Choose the word that is nearest in meaning to FASTIDIOUS:", opts:["A. Lazy","B. Careless","C. Meticulous","D. Generous"], ans:"C", exp:"Fastidious means very attentive to detail — meticulous." },
+      { y:2023, q:"Which of the following is a simple sentence?", opts:["A. She cried because she was hurt","B. John and Mary left early","C. When he arrived, we had eaten","D. He came, he saw, he conquered"], ans:"B", exp:"A simple sentence has one independent clause and no subordinate clause." },
+      { y:2023, q:"The plural of \"memorandum\" is:", opts:["A. Memorandas","B. Memorandums","C. Memoranda","D. Memorandies"], ans:"C", exp:"Memoranda is the correct Latin plural of memorandum." },
+      { y:2022, q:"Identify the figure of speech in \"The wind whispered through the trees\":", opts:["A. Simile","B. Metaphor","C. Personification","D. Hyperbole"], ans:"C", exp:"Personification attributes human action (whispering) to a non-human thing (wind)." },
+    ],
+    "Mathematics": [
+      { y:2024, q:"Evaluate: log₂8 + log₂4", opts:["A. 3","B. 4","C. 5","D. 6"], ans:"C", exp:"log₂8 = 3, log₂4 = 2. Sum = 5." },
+      { y:2024, q:"If 2x + 3 = 7, find x:", opts:["A. 1","B. 2","C. 3","D. 4"], ans:"B", exp:"2x = 7 - 3 = 4; x = 2." },
+      { y:2023, q:"Find the gradient of the line passing through (2,3) and (4,7):", opts:["A. 1","B. 2","C. 3","D. 4"], ans:"B", exp:"Gradient = (7-3)/(4-2) = 4/2 = 2." },
+      { y:2022, q:"A circle has radius 7cm. Find its area (π = 22/7):", opts:["A. 144 cm²","B. 154 cm²","C. 164 cm²","D. 174 cm²"], ans:"B", exp:"Area = π r² = 22/7 × 49 = 154 cm²." },
+    ],
+    "Biology": [
+      { y:2024, q:"The powerhouse of the cell is the:", opts:["A. Nucleus","B. Ribosome","C. Mitochondria","D. Vacuole"], ans:"C", exp:"Mitochondria produce ATP — the energy currency of the cell." },
+      { y:2024, q:"Osmosis is the movement of water from a region of:", opts:["A. High solute to low solute","B. Low water potential to high","C. High water potential to low water potential","D. Low concentration to high concentration"], ans:"C", exp:"Osmosis moves water from high water potential (dilute) to low (concentrated) through a semi-permeable membrane." },
+      { y:2023, q:"Which blood group is the universal donor?", opts:["A. A","B. B","C. AB","D. O"], ans:"D", exp:"Blood group O negative is the universal donor." },
+    ],
+    "Chemistry": [
+      { y:2024, q:"The atomic number of Carbon is:", opts:["A. 4","B. 6","C. 8","D. 12"], ans:"B", exp:"Carbon has 6 protons, giving it atomic number 6." },
+      { y:2024, q:"Which gas is produced when zinc reacts with dilute HCl?", opts:["A. Oxygen","B. Nitrogen","C. Hydrogen","D. Carbon dioxide"], ans:"C", exp:"Zn + 2HCl → ZnCl₂ + H₂↑" },
+      { y:2023, q:"pH of a neutral solution at 25°C is:", opts:["A. 0","B. 7","C. 14","D. 1"], ans:"B", exp:"Pure water is neutral with pH = 7." },
+    ],
+    "Physics": [
+      { y:2024, q:"The SI unit of electric current is the:", opts:["A. Volt","B. Ohm","C. Ampere","D. Watt"], ans:"C", exp:"Electric current is measured in Amperes (A)." },
+      { y:2024, q:"Which of the following is a scalar quantity?", opts:["A. Velocity","B. Acceleration","C. Force","D. Speed"], ans:"D", exp:"Speed has magnitude only, no direction — it is a scalar." },
+      { y:2023, q:"The speed of light in vacuum is approximately:", opts:["A. 3×10⁶ m/s","B. 3×10⁸ m/s","C. 3×10¹⁰ m/s","D. 3×10¹² m/s"], ans:"B", exp:"c ≈ 3 × 10⁸ metres per second." },
+    ]
+  }
+};
+
+function switchExam(exam, el) {
+  document.querySelectorAll('.exam-tile').forEach(function(t){ t.classList.remove('active-tile'); });
+  el.classList.add('active-tile');
+  document.querySelectorAll('.subj-panel').forEach(function(p){ p.style.display='none'; });
+  var panel = document.getElementById('panel-' + exam);
+  if (panel) panel.style.display = 'block';
+  document.getElementById('year-panel').style.display = 'none';
+  document.getElementById('exam-panel').style.display = 'block';
+}
+
+var currentExam = '', currentSubject = '';
+
+function openSubject(exam, subject) {
+  currentExam = exam;
+  currentSubject = subject;
+  document.getElementById('exam-panel').style.display = 'none';
+  var yp = document.getElementById('year-panel');
+  yp.style.display = 'block';
+  document.getElementById('year-panel-title').innerHTML = exam.toUpperCase() + ' &mdash; <span>' + subject + '</span>';
+
+  var qs = (questions[exam] && questions[exam][subject]) ? questions[exam][subject] : getDummyQs(subject);
+  var years = [...new Set(qs.map(function(q){ return q.y; }))].sort(function(a,b){ return b-a; });
+
+  var yfr = document.getElementById('year-filter-row');
+  yfr.innerHTML = '<button class="yr-btn active" onclick="filterYear('all', this)">All Years</button>';
+  years.forEach(function(y){
+    yfr.innerHTML += '<button class="yr-btn" onclick="filterYear(' + y + ', this)">' + y + '</button>';
+  });
+
+  renderQs(qs);
+}
+
+function getDummyQs(subject) {
+  return [
+    { y:2024, q:"Sample question 1 for " + subject + ". Which of the following is correct?", opts:["A. Option A","B. Option B","C. Option C","D. Option D"], ans:"A", exp:"This is a sample explanation. Real questions will load from the database." },
+    { y:2024, q:"Sample question 2 for " + subject + ". Choose the best answer:", opts:["A. Option A","B. Option B","C. Option C","D. Option D"], ans:"B", exp:"Explanation for sample question 2." },
+    { y:2023, q:"Sample question 3 for " + subject + ". Identify the correct option:", opts:["A. Option A","B. Option B","C. Option C","D. Option D"], ans:"C", exp:"Explanation for sample question 3." },
+  ];
+}
+
+function filterYear(y, el) {
+  document.querySelectorAll('.yr-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
+  var qs = (questions[currentExam] && questions[currentExam][currentSubject]) ? questions[currentExam][currentSubject] : getDummyQs(currentSubject);
+  renderQs(y === 'all' ? qs : qs.filter(function(q){ return q.y == y; }));
+}
+
+function renderQs(qs) {
+  var list = document.getElementById('questions-list');
+  if (!qs.length) { list.innerHTML = '<p style="color:var(--muted);text-align:center;padding:40px 0;">No questions found for this filter.</p>'; return; }
+  list.innerHTML = qs.map(function(q, i){
+    return '<div class="q-item">'
+      + '<div class="q-num">Question ' + (i+1) + ' &nbsp;&bull;&nbsp; ' + q.y + '</div>'
+      + '<div class="q-text">' + q.q + '</div>'
+      + '<div class="q-options">' + q.opts.map(function(o){
+          return '<div class="q-opt" onclick="checkAns(this, '' + o[0] + '', '' + q.ans + '', 'ans-' + i + '')">' + o + '</div>';
+        }).join('') + '</div>'
+      + '<div class="q-ans" id="ans-' + i + '">✓ Correct answer: ' + q.ans + ' — ' + q.exp + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+function checkAns(el, chosen, correct, ansId) {
+  var parent = el.parentElement;
+  parent.querySelectorAll('.q-opt').forEach(function(o){ o.style.pointerEvents='none'; });
+  if (chosen === correct) {
+    el.classList.add('correct');
+  } else {
+    el.classList.add('wrong');
+    parent.querySelectorAll('.q-opt').forEach(function(o){
+      if (o.textContent.trim()[0] === correct) o.classList.add('correct');
+    });
+  }
+  var ans = document.getElementById(ansId);
+  if (ans) ans.style.display = 'block';
+}
+
+function closeSubject() {
+  document.getElementById('year-panel').style.display = 'none';
+  document.getElementById('exam-panel').style.display = 'block';
 }
 
 </script>

@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CBT Practice | Learn&amp;Pass — 9jaExamGuru</title>
-  <meta name="description" content="Learn&amp;Pass — Free JAMB, WAEC, NECO &amp; GCE exam preparation for Nigerian students.">
+  <meta name="description" content="Free timed CBT exam practice for JAMB, WAEC, NECO &amp; GCE Nigerian students.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23006633'/><text x='50%25' y='55%25' font-size='14' text-anchor='middle' dominant-baseline='middle' fill='%23FFCC00' font-family='Georgia,serif' font-weight='bold'>LP</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
+
 
 /* ── ROOT ── */
 :root {
@@ -1144,6 +1144,93 @@ p { color: var(--body); }
   .news-card-img img { height: 180px; width: 100%; }
 }
 
+  
+/* ── Setup ── */
+.cbt-setup-grid { display:grid; grid-template-columns:1fr 380px; gap:48px; align-items:start; }
+.cbt-config-card { border:1px solid var(--line); padding:36px 32px; background:#fff; }
+.cbt-config-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:var(--black); margin-bottom:28px; padding-bottom:16px; border-bottom:2px solid var(--gold); }
+.cbt-field { margin-bottom:24px; }
+.cbt-label { display:block; font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.cbt-exam-row { display:flex; flex-wrap:wrap; gap:8px; }
+.cbt-exam-btn, .cbt-num-btn, .cbt-time-btn { border:2px solid var(--line); background:#fff; padding:8px 20px; font-size:13px; font-weight:700; cursor:pointer; transition:all .15s; border-radius:2px; }
+.cbt-exam-btn:hover, .cbt-num-btn:hover, .cbt-time-btn:hover { border-color:var(--green); color:var(--green); }
+.cbt-exam-btn.active, .cbt-num-btn.active, .cbt-time-btn.active { background:var(--green); color:#fff; border-color:var(--green); }
+.cbt-select { width:100%; border:2px solid var(--line); padding:10px 14px; font-size:14px; font-family:'Poppins',sans-serif; background:#fff; cursor:pointer; }
+.cbt-select:focus { outline:none; border-color:var(--green); }
+.cbt-start-btn { width:100%; background:var(--green); color:#fff; border:none; padding:15px; font-size:15px; font-weight:800; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; margin-top:8px; transition:background .15s; letter-spacing:.5px; }
+.cbt-start-btn:hover { background:var(--green-dark); }
+/* Info panel */
+.cbt-info-panel { background:var(--bg); border:1px solid var(--line); padding:28px 24px; }
+.cbt-info-head { font-family:'Playfair Display',serif; font-size:17px; font-weight:900; color:var(--black); margin-bottom:20px; }
+.cbt-step-list { display:flex; flex-direction:column; gap:16px; margin-bottom:24px; }
+.cbt-step { display:flex; gap:14px; align-items:flex-start; font-size:13px; color:var(--body); line-height:1.6; }
+.cbt-step-n { min-width:26px; height:26px; background:var(--green); color:#fff; font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center; border-radius:50%; flex-shrink:0; }
+.cbt-info-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); background:#fff; margin-top:8px; }
+.cbt-stat-item { text-align:center; padding:14px 8px; border-right:1px solid var(--line); }
+.cbt-stat-item:last-child { border-right:none; }
+.cbt-stat-num { font-family:'Playfair Display',serif; font-size:20px; font-weight:900; color:var(--green); }
+.cbt-stat-lbl { font-size:10px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+/* ── Exam screen ── */
+.cbt-exam-header { background:var(--green-dark); color:#fff; padding:12px 24px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:60px; z-index:90; }
+.cbt-exam-meta { font-size:13px; font-weight:600; display:flex; align-items:center; gap:10px; }
+.cbt-exam-sep { color:rgba(255,255,255,.4); }
+.cbt-timer-box { display:flex; align-items:center; gap:6px; font-size:15px; font-weight:900; font-family:'Playfair Display',serif; background:var(--gold); color:var(--green-dark); padding:6px 16px; border-radius:2px; }
+.cbt-exam-body { padding:32px 0 60px; }
+.q-strip-dot { width:28px; height:28px; border:2px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:800; cursor:pointer; transition:all .15s; }
+.q-strip-dot.answered { background:var(--green); color:#fff; border-color:var(--green); }
+.q-strip-dot.flagged  { background:var(--gold); color:var(--green-dark); border-color:var(--gold); }
+.q-strip-dot.current  { border-color:var(--green); color:var(--green); font-weight:900; }
+.cbt-q-card { border:1px solid var(--line); background:#fff; padding:32px 28px; margin-bottom:20px; }
+.cbt-q-num { font-size:10px; font-weight:800; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.cbt-q-text { font-size:16px; color:var(--black); line-height:1.7; margin-bottom:24px; }
+.cbt-q-opts { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.cbt-opt { border:2px solid var(--line); padding:12px 16px; font-size:14px; cursor:pointer; transition:all .15s; text-align:left; background:#fff; border-radius:2px; }
+.cbt-opt:hover { border-color:var(--green); background:var(--bg); }
+.cbt-opt.selected { border-color:var(--green); background:#e8f5ee; color:var(--green); font-weight:700; }
+.cbt-opt.correct-ans { border-color:var(--green); background:#e8f5ee; color:var(--green); font-weight:700; }
+.cbt-opt.wrong-ans { border-color:#dc2626; background:#fdecea; color:#dc2626; }
+.cbt-q-flag { margin-top:14px; }
+.cbt-flag-btn { background:none; border:1px solid var(--line); font-size:12px; font-weight:700; padding:6px 14px; cursor:pointer; color:var(--muted); transition:all .15s; }
+.cbt-flag-btn:hover, .cbt-flag-btn.flagged { background:#fffbe6; border-color:var(--gold); color:#a07800; }
+.cbt-nav-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+.cbt-nav-btn { border:2px solid var(--line); background:#fff; padding:10px 22px; font-size:13px; font-weight:700; cursor:pointer; transition:all .15s; }
+.cbt-nav-btn:hover { border-color:var(--green); color:var(--green); }
+.cbt-nav-next { background:var(--green); color:#fff; border-color:var(--green); }
+.cbt-nav-next:hover { background:var(--green-dark); }
+.cbt-submit-btn { background:var(--gold); color:var(--green-dark); border:none; padding:10px 28px; font-size:13px; font-weight:800; cursor:pointer; margin-left:auto; }
+/* ── Result ── */
+.cbt-result-card { border:1px solid var(--line); background:#fff; padding:40px 32px; text-align:center; }
+.cbt-result-badge { display:inline-block; font-size:11px; font-weight:900; letter-spacing:3px; padding:5px 20px; margin-bottom:16px; }
+.cbt-result-badge.pass { background:#e8f5ee; color:var(--green); }
+.cbt-result-badge.fail { background:#fdecea; color:#dc2626; }
+.cbt-result-score { font-family:'Playfair Display',serif; font-size:52px; font-weight:900; color:var(--black); line-height:1; }
+.cbt-result-pct { font-size:22px; font-weight:800; color:var(--green); margin:8px 0; }
+.cbt-result-meta { font-size:13px; color:var(--muted); margin-bottom:24px; }
+.cbt-result-bar-wrap { background:var(--line); height:8px; border-radius:4px; margin:0 auto 24px; max-width:320px; }
+.cbt-result-bar { height:8px; background:var(--green); border-radius:4px; transition:width 1s ease; }
+.cbt-result-breakdown { display:flex; justify-content:center; gap:32px; margin-bottom:28px; font-size:13px; }
+.rb-item { text-align:center; }
+.rb-num { font-family:'Playfair Display',serif; font-size:22px; font-weight:900; }
+.rb-num.correct { color:var(--green); }
+.rb-num.wrong   { color:#dc2626; }
+.rb-num.skip    { color:var(--muted); }
+.rb-lbl { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--muted); margin-top:2px; }
+.cbt-result-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+/* review */
+.rv-item { border:1px solid var(--line); border-bottom:none; padding:20px 24px; background:#fff; }
+.rv-item:last-child { border-bottom:1px solid var(--line); }
+.rv-q-num { font-size:10px; font-weight:800; letter-spacing:2px; color:var(--muted); margin-bottom:6px; }
+.rv-q-text { font-size:14px; color:var(--black); margin-bottom:10px; }
+.rv-ans-row { display:flex; gap:10px; font-size:12px; flex-wrap:wrap; }
+.rv-your { font-weight:700; }
+.rv-your.correct { color:var(--green); }
+.rv-your.wrong { color:#dc2626; }
+.rv-correct { color:var(--green); font-weight:700; }
+.rv-exp { font-size:12px; color:var(--muted); margin-top:6px; border-left:3px solid var(--gold); padding-left:10px; }
+/* ── Responsive ── */
+@media(max-width:900px){ .cbt-setup-grid{ grid-template-columns:1fr; } .cbt-info-panel{ order:-1; } }
+@media(max-width:600px){ .cbt-q-opts{ grid-template-columns:1fr; } .cbt-result-score{ font-size:38px; } .cbt-config-card{ padding:24px 16px; } }
+
   </style>
 </head>
 <body>
@@ -1160,12 +1247,7 @@ p { color: var(--body); }
       <div class="nav-logo-text">Learn<span>&amp;</span>Pass</div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resources.html">Resources</a>
-      <a href="news.html">News</a>
-      <a href="contact.html">Contact</a>
-      <a href="cbt.html" class="active nav-cta-btn">Practice CBT</a>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html">Contact</a><a href="cbt.html" class="active nav-cta-btn">Practice CBT</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1181,9 +1263,180 @@ p { color: var(--body); }
   </div>
 </nav>
 <main>
-<div class="page-hero"><div class="wrap"><div class="bc">Home / <span>CBT Practice</span></div><h1>CBT <span>Practice</span></h1><p>Timed exam simulation. 20 questions. Instant results.</p></div></div>
-  <div class="cs"><h2>CBT Practice Page</h2><p>Awaiting approval to proceed 🎯</p><br/><button class="btn btn-primary" onclick="window.location='index.html'">Back to Home</button></div>
+
+<!-- SETUP SCREEN -->
+<div id="cbt-setup">
+  <div class="page-hero">
+    <div class="wrap">
+      <div class="bc"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>CBT Practice</span></div>
+      <h1>CBT <span>Practice</span></h1>
+      <p>Timed exam simulation. Choose your exam, subject and year — then start. Just like the real thing.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cbt-setup-grid">
+
+        <!-- LEFT: CONFIG FORM -->
+        <div class="cbt-config-card">
+          <div class="cbt-config-title">Configure Your Exam</div>
+
+          <div class="cbt-field">
+            <label class="cbt-label">1. Select Exam Body</label>
+            <div class="cbt-exam-row">
+              <button class="cbt-exam-btn active" onclick="selectExam('jamb',this)">JAMB</button>
+              <button class="cbt-exam-btn" onclick="selectExam('waec',this)">WAEC</button>
+              <button class="cbt-exam-btn" onclick="selectExam('neco',this)">NECO</button>
+              <button class="cbt-exam-btn" onclick="selectExam('gce',this)">GCE</button>
+            </div>
+          </div>
+
+          <div class="cbt-field">
+            <label class="cbt-label">2. Select Subject</label>
+            <select id="cbt-subject" class="cbt-select">
+              <option value="English Language">English Language</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Biology">Biology</option>
+              <option value="Chemistry">Chemistry</option>
+              <option value="Physics">Physics</option>
+              <option value="Economics">Economics</option>
+              <option value="Government">Government</option>
+              <option value="Literature in English">Literature in English</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Geography">Geography</option>
+            </select>
+          </div>
+
+          <div class="cbt-field">
+            <label class="cbt-label">3. Number of Questions</label>
+            <div class="cbt-exam-row">
+              <button class="cbt-num-btn active" onclick="selectNum(20,this)">20</button>
+              <button class="cbt-num-btn" onclick="selectNum(40,this)">40</button>
+              <button class="cbt-num-btn" onclick="selectNum(60,this)">60</button>
+            </div>
+          </div>
+
+          <div class="cbt-field">
+            <label class="cbt-label">4. Time Limit</label>
+            <div class="cbt-exam-row">
+              <button class="cbt-time-btn active" onclick="selectTime(20,this)">20 mins</button>
+              <button class="cbt-time-btn" onclick="selectTime(40,this)">40 mins</button>
+              <button class="cbt-time-btn" onclick="selectTime(60,this)">60 mins</button>
+            </div>
+          </div>
+
+          <button class="cbt-start-btn" onclick="startCBT()">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Start Exam
+          </button>
+        </div>
+
+        <!-- RIGHT: INFO PANEL -->
+        <div class="cbt-info-panel">
+          <div class="cbt-info-head">How It Works</div>
+          <div class="cbt-step-list">
+            <div class="cbt-step"><div class="cbt-step-n">1</div><div><strong>Choose your exam & subject</strong><br>JAMB, WAEC, NECO or GCE. Pick any subject.</div></div>
+            <div class="cbt-step"><div class="cbt-step-n">2</div><div><strong>Set your duration</strong><br>20, 40 or 60 minutes — timed just like the real exam.</div></div>
+            <div class="cbt-step"><div class="cbt-step-n">3</div><div><strong>Answer questions</strong><br>Click an option to select. You can flag questions and review later.</div></div>
+            <div class="cbt-step"><div class="cbt-step-n">4</div><div><strong>Submit & see results</strong><br>Instant score, percentage, and full answer review.</div></div>
+          </div>
+          <div class="cbt-info-stats">
+            <div class="cbt-stat-item"><div class="cbt-stat-num">50K+</div><div class="cbt-stat-lbl">Questions</div></div>
+            <div class="cbt-stat-item"><div class="cbt-stat-num">20+</div><div class="cbt-stat-lbl">Years Archive</div></div>
+            <div class="cbt-stat-item"><div class="cbt-stat-num">Free</div><div class="cbt-stat-lbl">Always</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 </div>
+
+<!-- EXAM SCREEN (hidden until start) -->
+<div id="cbt-exam" style="display:none;">
+  <div class="cbt-exam-header">
+    <div class="cbt-exam-meta">
+      <span id="cbt-exam-label">JAMB — English Language</span>
+      <span class="cbt-exam-sep">|</span>
+      <span id="cbt-q-counter">Question 1 of 20</span>
+    </div>
+    <div class="cbt-timer-box">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span id="cbt-timer">20:00</span>
+    </div>
+  </div>
+
+  <div class="cbt-exam-body">
+    <div class="wrap-sm">
+
+      <!-- QUESTION STRIP -->
+      <div id="q-strip" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px;"></div>
+
+      <!-- QUESTION CARD -->
+      <div class="cbt-q-card">
+        <div class="cbt-q-num" id="q-num-label">Question 1</div>
+        <div class="cbt-q-text" id="q-text"></div>
+        <div class="cbt-q-opts" id="q-opts"></div>
+        <div class="cbt-q-flag">
+          <button class="cbt-flag-btn" id="flag-btn" onclick="flagQ()">&#9873; Flag for Review</button>
+        </div>
+      </div>
+
+      <!-- NAV BUTTONS -->
+      <div class="cbt-nav-row">
+        <button class="cbt-nav-btn" onclick="prevQ()" id="btn-prev">&#8592; Previous</button>
+        <button class="cbt-nav-btn cbt-nav-next" onclick="nextQ()" id="btn-next">Next &#8594;</button>
+        <button class="cbt-submit-btn" onclick="confirmSubmit()" id="btn-submit" style="display:none;">Submit Exam</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- RESULT SCREEN (hidden) -->
+<div id="cbt-result" style="display:none;">
+  <section class="section">
+    <div class="wrap-sm">
+      <div class="cbt-result-card">
+        <div class="cbt-result-badge" id="result-badge">PASS</div>
+        <div class="cbt-result-score" id="result-score">16 / 20</div>
+        <div class="cbt-result-pct" id="result-pct">80%</div>
+        <div class="cbt-result-meta" id="result-meta">JAMB — English Language &nbsp;·&nbsp; 20 Questions</div>
+        <div class="cbt-result-bar-wrap">
+          <div class="cbt-result-bar" id="result-bar" style="width:80%;"></div>
+        </div>
+        <div class="cbt-result-breakdown" id="result-breakdown"></div>
+        <div class="cbt-result-actions">
+          <button class="btn btn-primary" onclick="reviewAnswers()">Review Answers</button>
+          <button class="btn btn-gold" onclick="restartCBT()">Try Again</button>
+          <a href="resources.html" class="btn btn-ghost">Study Resources</a>
+        </div>
+      </div>
+
+      <!-- ANSWER REVIEW -->
+      <div id="answer-review" style="display:none; margin-top:40px;">
+        <div class="section-title" style="margin-bottom:24px;">Answer Review</div>
+        <div id="review-list"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONFIRM SUBMIT MODAL -->
+<div class="modal-overlay" id="confirm-overlay" style="display:none;">
+  <div class="modal" style="max-width:420px;">
+    <div class="modal-head">Submit Exam?</div>
+    <div class="modal-rows" style="padding:24px;">
+      <p id="confirm-msg" style="font-size:14px;color:var(--body);line-height:1.6;"></p>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeConfirm()">Cancel</button>
+      <button class="btn btn-primary" onclick="submitExam()">Submit Now</button>
+    </div>
+  </div>
+</div>
+
 </main>
 <footer class="footer">
   <div class="footer-main">
@@ -1218,9 +1471,10 @@ p { color: var(--body); }
       <li><a href="contact.html">Report an Error</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
+  <div class="footer-bottom">&copy; 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
 </footer>
 <script>
+
 
 function toggleMob() {
   var m = document.getElementById('mnav');
@@ -1262,6 +1516,264 @@ function showToast(msg) {
   t.style.opacity = '1';
   clearTimeout(t._timer);
   t._timer = setTimeout(function(){ t.style.opacity = '0'; }, 3000);
+}
+
+
+var cbtExam = 'jamb', cbtSubject = 'English Language', cbtNum = 20, cbtTime = 20;
+var cbtQuestions = [], cbtCurrent = 0, cbtAnswers = {}, cbtFlagged = {}, cbtInterval = null, cbtSecsLeft = 0;
+
+var qBank = {
+  jamb: {
+    "English Language": [
+      {q:"In the sentence \"The committee has reached its decision\", the word \"committee\" is:",opts:["A. Collective noun","B. Proper noun","C. Abstract noun","D. Material noun"],ans:"A",exp:"A committee is a group of people — a collective noun."},
+      {q:"Choose the word nearest in meaning to FASTIDIOUS:",opts:["A. Lazy","B. Careless","C. Meticulous","D. Generous"],ans:"C",exp:"Fastidious means very attentive to detail — meticulous."},
+      {q:"Which of the following is a simple sentence?",opts:["A. She cried because she was hurt","B. John and Mary left early","C. When he arrived, we had eaten","D. He came, he saw, he conquered"],ans:"B",exp:"A simple sentence has one independent clause only."},
+      {q:"The plural of \"memorandum\" is:",opts:["A. Memorandas","B. Memorandums","C. Memoranda","D. Memorandies"],ans:"C",exp:"Memoranda is the correct Latin plural."},
+      {q:"Identify the figure of speech in \"The wind whispered through the trees\":",opts:["A. Simile","B. Metaphor","C. Personification","D. Hyperbole"],ans:"C",exp:"Personification gives the wind a human action."},
+      {q:"Choose the correct sentence:",opts:["A. Neither of the boys have finished","B. Neither of the boys has finished","C. Neither of the boys were finished","D. Neither of the boys are finished"],ans:"B",exp:"Neither takes a singular verb."},
+      {q:"The word OBFUSCATE means:",opts:["A. To clarify","B. To confuse","C. To illuminate","D. To simplify"],ans:"B",exp:"Obfuscate means to make unclear or confusing."},
+      {q:"Which word is correctly spelt?",opts:["A. Occassion","B. Ocassion","C. Occasion","D. Occation"],ans:"C",exp:"Occasion — one c, two s's would be wrong."},
+      {q:"Identify the clause type: \"Although it rained, we continued\":",opts:["A. Noun clause","B. Relative clause","C. Adverbial clause","D. Adjectival clause"],ans:"C",exp:"An adverbial clause modifies the main verb."},
+      {q:"The antonym of PRODIGAL is:",opts:["A. Wasteful","B. Thrifty","C. Generous","D. Careless"],ans:"B",exp:"Prodigal means wasteful; thrifty is the opposite."},
+      {q:"Choose the word with the correct stress: PHOTOGRAPHY",opts:["A. PHO-tog-ra-phy","B. pho-TOG-ra-phy","C. pho-tog-RA-phy","D. pho-tog-ra-PHY"],ans:"B",exp:"PHO-TOG-ra-phy — stress on second syllable."},
+      {q:"Which sentence contains a dangling modifier?",opts:["A. Walking fast, she tripped","B. Walking fast, the keys fell","C. She tripped while walking fast","D. The fast walker tripped"],ans:"B",exp:"The modifier \"walking fast\" has no logical subject — the keys can't walk."},
+      {q:"GREGARIOUS means:",opts:["A. Shy","B. Hostile","C. Sociable","D. Arrogant"],ans:"C",exp:"Gregarious means fond of company — sociable."},
+      {q:"A word that modifies a verb is called:",opts:["A. Adjective","B. Adverb","C. Conjunction","D. Preposition"],ans:"B",exp:"Adverbs modify verbs, adjectives, or other adverbs."},
+      {q:"Identify the type: \"The book that I bought is missing.\"",opts:["A. Noun clause","B. Adverb clause","C. Relative clause","D. Conditional clause"],ans:"C",exp:"\"That I bought\" is a relative clause modifying \"the book\"."},
+      {q:"The word EPHEMERAL means:",opts:["A. Long-lasting","B. Short-lived","C. Permanent","D. Eternal"],ans:"B",exp:"Ephemeral means lasting a very short time."},
+      {q:"Which is a linking verb?",opts:["A. Run","B. Seem","C. Throw","D. Build"],ans:"B",exp:"Seem, appear, become are linking verbs."},
+      {q:"LACONIC speech means:",opts:["A. Long and detailed","B. Brief and concise","C. Loud and clear","D. Confusing"],ans:"B",exp:"Laconic means using few words."},
+      {q:"The sentence \"Do you know who he is?\" is a:",opts:["A. Direct question","B. Indirect question","C. Rhetorical question","D. Tag question"],ans:"B",exp:"Indirect questions are embedded within another sentence."},
+      {q:"ACRIMONY means:",opts:["A. Kindness","B. Bitterness","C. Gratitude","D. Joy"],ans:"B",exp:"Acrimony means bitterness or ill feeling."},
+    ],
+    "Mathematics": [
+      {q:"Evaluate: log₂8 + log₂4",opts:["A. 3","B. 4","C. 5","D. 6"],ans:"C",exp:"log₂8=3, log₂4=2. Sum=5."},
+      {q:"If 2x + 3 = 7, find x:",opts:["A. 1","B. 2","C. 3","D. 4"],ans:"B",exp:"2x=4; x=2."},
+      {q:"Find the gradient of line through (2,3) and (4,7):",opts:["A. 1","B. 2","C. 3","D. 4"],ans:"B",exp:"(7-3)/(4-2)=2."},
+      {q:"A circle has radius 7cm. Find area (π=22/7):",opts:["A. 144","B. 154","C. 164","D. 174"],ans:"B",exp:"πr²=22/7×49=154 cm²."},
+      {q:"Simplify: (2³ × 2⁴) ÷ 2⁵",opts:["A. 2","B. 4","C. 8","D. 16"],ans:"B",exp:"2⁷÷2⁵=2²=4."},
+      {q:"Find the LCM of 12 and 18:",opts:["A. 6","B. 18","C. 36","D. 72"],ans:"C",exp:"LCM(12,18)=36."},
+      {q:"Solve: 3x - 5 = 10",opts:["A. 3","B. 4","C. 5","D. 6"],ans:"C",exp:"3x=15; x=5."},
+      {q:"The sum of angles in a triangle is:",opts:["A. 90°","B. 180°","C. 270°","D. 360°"],ans:"B",exp:"Angles in a triangle always sum to 180°."},
+      {q:"Express 0.00045 in standard form:",opts:["A. 4.5×10⁻⁴","B. 4.5×10⁻³","C. 45×10⁻⁵","D. 4.5×10⁻²"],ans:"A",exp:"0.00045 = 4.5 × 10⁻⁴."},
+      {q:"Find the area of a rectangle 8cm by 5cm:",opts:["A. 13 cm²","B. 26 cm²","C. 40 cm²","D. 45 cm²"],ans:"C",exp:"Area = length × width = 8 × 5 = 40 cm²."},
+      {q:"What is 15% of 200?",opts:["A. 25","B. 30","C. 35","D. 40"],ans:"B",exp:"15/100 × 200 = 30."},
+      {q:"If a = 3 and b = 4, find √(a² + b²):",opts:["A. 5","B. 6","C. 7","D. 8"],ans:"A",exp:"√(9+16) = √25 = 5."},
+      {q:"Factorise: x² - 9",opts:["A. (x-3)(x-3)","B. (x+3)(x+3)","C. (x-3)(x+3)","D. (x-9)(x+1)"],ans:"C",exp:"Difference of two squares: x²-9=(x-3)(x+3)."},
+      {q:"The mean of 4, 7, 8, 9, 12 is:",opts:["A. 7","B. 8","C. 9","D. 10"],ans:"B",exp:"Sum=40; Mean=40/5=8."},
+      {q:"Convert 45° to radians:",opts:["A. π/2","B. π/3","C. π/4","D. π/6"],ans:"C",exp:"45° × π/180 = π/4."},
+      {q:"Find the HCF of 24 and 36:",opts:["A. 4","B. 6","C. 12","D. 18"],ans:"C",exp:"HCF(24,36)=12."},
+      {q:"Evaluate: 4! (4 factorial)",opts:["A. 12","B. 16","C. 24","D. 48"],ans:"C",exp:"4!=4×3×2×1=24."},
+      {q:"A right angle is:",opts:["A. 45°","B. 90°","C. 180°","D. 360°"],ans:"B",exp:"A right angle = 90°."},
+      {q:"Simplify: 2(3x + 4) - 3(x - 2)",opts:["A. 3x + 10","B. 3x + 14","C. 9x + 14","D. 3x + 2"],ans:"B",exp:"6x+8-3x+6=3x+14."},
+      {q:"The probability of getting a head when a coin is tossed is:",opts:["A. 1/4","B. 1/3","C. 1/2","D. 2/3"],ans:"C",exp:"There are 2 equally likely outcomes; P(head)=1/2."},
+    ],
+    "Biology": [
+      {q:"The powerhouse of the cell is:",opts:["A. Nucleus","B. Ribosome","C. Mitochondria","D. Vacuole"],ans:"C",exp:"Mitochondria produce ATP — energy currency."},
+      {q:"Which blood group is the universal donor?",opts:["A. A","B. B","C. AB","D. O"],ans:"D",exp:"Blood group O negative is the universal donor."},
+      {q:"Osmosis moves water from:",opts:["A. High solute to low","B. Low water potential to high","C. High water potential to low","D. Concentrated to dilute"],ans:"C",exp:"Water moves from high to low water potential."},
+      {q:"The basic unit of life is:",opts:["A. Organ","B. Tissue","C. Cell","D. Molecule"],ans:"C",exp:"All living things are made of cells."},
+      {q:"Photosynthesis occurs in the:",opts:["A. Mitochondria","B. Ribosome","C. Chloroplast","D. Nucleus"],ans:"C",exp:"Chloroplasts contain chlorophyll for photosynthesis."},
+      {q:"DNA stands for:",opts:["A. Deoxyribose Nucleic Acid","B. Di-Nucleic Acid","C. Deoxyribonucleic Acid","D. Double Nucleic Acid"],ans:"C",exp:"DNA = Deoxyribonucleic Acid."},
+      {q:"The heart has how many chambers?",opts:["A. 2","B. 3","C. 4","D. 5"],ans:"C",exp:"4 chambers: 2 atria and 2 ventricles."},
+      {q:"Which gas do plants absorb during photosynthesis?",opts:["A. Oxygen","B. Nitrogen","C. Carbon dioxide","D. Hydrogen"],ans:"C",exp:"Plants absorb CO₂ for photosynthesis."},
+      {q:"The process of cell division is called:",opts:["A. Mitosis","B. Meiosis","C. Both A and B","D. Osmosis"],ans:"C",exp:"Both mitosis and meiosis are cell division processes."},
+      {q:"Insulin is produced by the:",opts:["A. Liver","B. Kidney","C. Pancreas","D. Thyroid"],ans:"C",exp:"The islets of Langerhans in the pancreas produce insulin."},
+    ],
+  },
+  waec: {
+    "English Language": [
+      {q:"Choose the correctly punctuated sentence:",opts:["A. Its a fine day","B. It's a fine day","C. Its' a fine day","D. It's a fine Day"],ans:"B",exp:"It's is the contraction of 'it is'."},
+      {q:"The word AMELIORATE means:",opts:["A. To worsen","B. To improve","C. To maintain","D. To destroy"],ans:"B",exp:"Ameliorate means to make something better."},
+    ],
+    "Mathematics": [
+      {q:"Find x if 5x = 25²",opts:["A. 5","B. 10","C. 125","D. 625"],ans:"C",exp:"25²=625; 5x=625; x=125."},
+      {q:"The volume of a cube of side 4cm is:",opts:["A. 16 cm³","B. 24 cm³","C. 48 cm³","D. 64 cm³"],ans:"D",exp:"V=s³=4³=64 cm³."},
+    ]
+  }
+};
+
+function selectExam(e, el) {
+  cbtExam = e;
+  document.querySelectorAll('.cbt-exam-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
+}
+function selectNum(n, el) {
+  cbtNum = n;
+  document.querySelectorAll('.cbt-num-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
+}
+function selectTime(t, el) {
+  cbtTime = t;
+  document.querySelectorAll('.cbt-time-btn').forEach(function(b){ b.classList.remove('active'); });
+  el.classList.add('active');
+}
+
+function startCBT() {
+  cbtSubject = document.getElementById('cbt-subject').value;
+  var pool = (qBank[cbtExam] && qBank[cbtExam][cbtSubject]) ? qBank[cbtExam][cbtSubject] : generateDummy(cbtSubject);
+  // Shuffle and slice
+  cbtQuestions = shuffle(pool.slice()).slice(0, Math.min(cbtNum, pool.length));
+  if (cbtQuestions.length < cbtNum) {
+    var extra = generateDummy(cbtSubject, cbtNum - cbtQuestions.length);
+    cbtQuestions = cbtQuestions.concat(extra);
+  }
+  cbtCurrent = 0; cbtAnswers = {}; cbtFlagged = {};
+  document.getElementById('cbt-exam-label').textContent = cbtExam.toUpperCase() + ' — ' + cbtSubject;
+  document.getElementById('cbt-setup').style.display = 'none';
+  document.getElementById('cbt-result').style.display = 'none';
+  document.getElementById('cbt-exam').style.display = 'block';
+  cbtSecsLeft = cbtTime * 60;
+  startTimer();
+  renderStrip();
+  renderQuestion();
+}
+
+function shuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+
+function generateDummy(subject, count) {
+  count = count || 20;
+  var dummies = [];
+  for (var i = 0; i < count; i++) {
+    dummies.push({
+      q: "Question " + (i+1) + " for " + subject + ": Which of the following is correct?",
+      opts: ["A. Option A","B. Option B","C. Option C","D. Option D"],
+      ans: ["A","B","C","D"][i % 4],
+      exp: "This is a placeholder question. Full question bank coming soon."
+    });
+  }
+  return dummies;
+}
+
+function startTimer() {
+  clearInterval(cbtInterval);
+  cbtInterval = setInterval(function() {
+    cbtSecsLeft--;
+    var m = Math.floor(cbtSecsLeft / 60);
+    var s = cbtSecsLeft % 60;
+    document.getElementById('cbt-timer').textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    if (cbtSecsLeft <= 60) document.getElementById('cbt-timer').style.color = '#dc2626';
+    if (cbtSecsLeft <= 0) { clearInterval(cbtInterval); submitExam(); }
+  }, 1000);
+}
+
+function renderStrip() {
+  var strip = document.getElementById('q-strip');
+  strip.innerHTML = '';
+  cbtQuestions.forEach(function(q, i) {
+    var cls = 'q-strip-dot';
+    if (i === cbtCurrent) cls += ' current';
+    else if (cbtFlagged[i]) cls += ' flagged';
+    else if (cbtAnswers[i] !== undefined) cls += ' answered';
+    strip.innerHTML += '<div class="' + cls + '" onclick="goQ(' + i + ')">' + (i+1) + '</div>';
+  });
+}
+
+function renderQuestion() {
+  var q = cbtQuestions[cbtCurrent];
+  document.getElementById('q-num-label').textContent = 'Question ' + (cbtCurrent + 1) + ' of ' + cbtQuestions.length;
+  document.getElementById('cbt-q-counter').textContent = 'Question ' + (cbtCurrent + 1) + ' of ' + cbtQuestions.length;
+  document.getElementById('q-text').textContent = q.q;
+  var optsHtml = q.opts.map(function(o, oi) {
+    var sel = (cbtAnswers[cbtCurrent] === o[0]) ? ' selected' : '';
+    return '<button class="cbt-opt' + sel + '" onclick="selectOpt(this, '' + o[0] + '')">' + o + '</button>';
+  }).join('');
+  document.getElementById('q-opts').innerHTML = optsHtml;
+  var fb = document.getElementById('flag-btn');
+  fb.className = 'cbt-flag-btn' + (cbtFlagged[cbtCurrent] ? ' flagged' : '');
+  fb.textContent = cbtFlagged[cbtCurrent] ? '⚑ Flagged' : '⚑ Flag for Review';
+  document.getElementById('btn-prev').style.display = cbtCurrent === 0 ? 'none' : 'inline-block';
+  document.getElementById('btn-next').style.display = cbtCurrent === cbtQuestions.length - 1 ? 'none' : 'inline-flex';
+  document.getElementById('btn-submit').style.display = cbtCurrent === cbtQuestions.length - 1 ? 'inline-block' : 'none';
+}
+
+function selectOpt(el, letter) {
+  document.querySelectorAll('.cbt-opt').forEach(function(o){ o.classList.remove('selected'); });
+  el.classList.add('selected');
+  cbtAnswers[cbtCurrent] = letter;
+  renderStrip();
+}
+
+function nextQ() { if (cbtCurrent < cbtQuestions.length - 1) { cbtCurrent++; renderQuestion(); renderStrip(); } }
+function prevQ() { if (cbtCurrent > 0) { cbtCurrent--; renderQuestion(); renderStrip(); } }
+function goQ(i) { cbtCurrent = i; renderQuestion(); renderStrip(); }
+
+function flagQ() {
+  cbtFlagged[cbtCurrent] = !cbtFlagged[cbtCurrent];
+  renderQuestion(); renderStrip();
+}
+
+function confirmSubmit() {
+  var answered = Object.keys(cbtAnswers).length;
+  var unanswered = cbtQuestions.length - answered;
+  document.getElementById('confirm-msg').innerHTML = 'You have answered <strong>' + answered + '</strong> of <strong>' + cbtQuestions.length + '</strong> questions.'
+    + (unanswered > 0 ? '<br><span style="color:#dc2626;font-weight:700;">' + unanswered + ' question(s) unanswered.</span>' : '')
+    + '<br><br>Are you sure you want to submit?';
+  document.getElementById('confirm-overlay').style.display = 'flex';
+}
+function closeConfirm() { document.getElementById('confirm-overlay').style.display = 'none'; }
+
+function submitExam() {
+  clearInterval(cbtInterval);
+  closeConfirm();
+  var correct = 0, wrong = 0, skipped = 0;
+  cbtQuestions.forEach(function(q, i) {
+    if (cbtAnswers[i] === undefined) skipped++;
+    else if (cbtAnswers[i] === q.ans) correct++;
+    else wrong++;
+  });
+  var total = cbtQuestions.length;
+  var pct = Math.round((correct / total) * 100);
+  var pass = pct >= 50;
+  document.getElementById('cbt-exam').style.display = 'none';
+  var res = document.getElementById('cbt-result');
+  res.style.display = 'block';
+  var badge = document.getElementById('result-badge');
+  badge.textContent = pass ? 'PASS' : 'FAIL';
+  badge.className = 'cbt-result-badge ' + (pass ? 'pass' : 'fail');
+  document.getElementById('result-score').textContent = correct + ' / ' + total;
+  document.getElementById('result-pct').textContent = pct + '%';
+  document.getElementById('result-meta').textContent = cbtExam.toUpperCase() + ' — ' + cbtSubject + ' · ' + total + ' Questions';
+  setTimeout(function(){ document.getElementById('result-bar').style.width = pct + '%'; }, 100);
+  document.getElementById('result-breakdown').innerHTML =
+    '<div class="rb-item"><div class="rb-num correct">' + correct + '</div><div class="rb-lbl">Correct</div></div>' +
+    '<div class="rb-item"><div class="rb-num wrong">' + wrong + '</div><div class="rb-lbl">Wrong</div></div>' +
+    '<div class="rb-item"><div class="rb-num skip">' + skipped + '</div><div class="rb-lbl">Skipped</div></div>';
+}
+
+function reviewAnswers() {
+  var rv = document.getElementById('answer-review');
+  rv.style.display = rv.style.display === 'none' ? 'block' : 'none';
+  if (rv.style.display === 'block') {
+    var list = document.getElementById('review-list');
+    list.innerHTML = cbtQuestions.map(function(q, i) {
+      var userAns = cbtAnswers[i];
+      var correct = q.ans;
+      var isCorrect = userAns === correct;
+      var skipped = userAns === undefined;
+      return '<div class="rv-item">'
+        + '<div class="rv-q-num">Question ' + (i+1) + '</div>'
+        + '<div class="rv-q-text">' + q.q + '</div>'
+        + '<div class="rv-ans-row">'
+        + '<span class="rv-your ' + (skipped ? 'skip' : (isCorrect ? 'correct' : 'wrong')) + '">Your answer: ' + (skipped ? 'Skipped' : userAns) + '</span>'
+        + (!isCorrect && !skipped ? '<span class="rv-correct"> · Correct: ' + correct + '</span>' : '')
+        + '</div>'
+        + (q.exp ? '<div class="rv-exp">' + q.exp + '</div>' : '')
+        + '</div>';
+    }).join('');
+  }
+}
+
+function restartCBT() {
+  document.getElementById('cbt-result').style.display = 'none';
+  document.getElementById('answer-review').style.display = 'none';
+  document.getElementById('cbt-setup').style.display = 'block';
 }
 
 </script>
