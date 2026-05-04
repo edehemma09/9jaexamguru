@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Learn&amp;Pass — 9jaExamGuru</title>
-  <meta name="description" content="Learn&amp;Pass — Free JAMB, WAEC, NECO &amp; GCE exam preparation for Nigerian students.">
+  <title>Contact Us | Learn&amp;Pass — 9jaExamGuru</title>
+  <meta name="description" content="Contact the Learn&amp;Pass team for support, question errors, partnerships and feedback.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23006633'/><text x='50%25' y='55%25' font-size='14' text-anchor='middle' dominant-baseline='middle' fill='%23FFCC00' font-family='Georgia,serif' font-weight='bold'>LP</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <style>
+
 
 /* ── ROOT ── */
 :root {
@@ -1144,6 +1144,241 @@ p { color: var(--body); }
   .news-card-img img { height: 180px; width: 100%; }
 }
 
+  
+/* ── Contact layout ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 56px;
+  align-items: start;
+  margin-top: 48px;
+}
+
+/* ── Form card ── */
+.contact-form-card {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 40px 36px;
+}
+.contact-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 6px;
+}
+.contact-form-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ── Subject tabs ── */
+.subject-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.subj-tab {
+  border: 2px solid var(--line);
+  background: #fff;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s;
+  border-radius: 2px;
+  font-family: 'Poppins', sans-serif;
+}
+.subj-tab:hover { border-color: var(--green); color: var(--green); }
+.subj-tab.active { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* ── Form fields ── */
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 2px solid var(--line);
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  background: #fff;
+  transition: border-color .15s;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--green);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-group input.error,
+.form-group textarea.error { border-color: #dc2626; }
+.form-err { font-size: 11px; color: #dc2626; font-weight: 700; margin-top: 4px; display: none; }
+
+.contact-submit-btn {
+  width: 100%;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: .5px;
+  transition: background .15s;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.contact-submit-btn:hover { background: var(--green-dark); }
+.contact-submit-btn:disabled { background: #aaa; cursor: not-allowed; }
+
+/* ── Success state ── */
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+}
+.form-success-icon {
+  width: 64px;
+  height: 64px;
+  background: #e8f5ee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.form-success-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+.form-success-msg { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+
+/* ── Right info panel ── */
+.contact-info-panel { display: flex; flex-direction: column; gap: 0; }
+
+.contact-info-block {
+  border: 1px solid var(--line);
+  border-bottom: none;
+  padding: 24px 22px;
+  background: #fff;
+}
+.contact-info-block:last-of-type { border-bottom: 1px solid var(--line); }
+
+.cib-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.cib-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.cib-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+.cib-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* ── FAQ accordion ── */
+.faq-section { margin-top: 72px; }
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--line); margin-top: 32px; }
+.faq-item { background: #fff; }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+  gap: 12px;
+  user-select: none;
+}
+.faq-q:hover { background: var(--bg); }
+.faq-q svg { flex-shrink: 0; transition: transform .2s; color: var(--green); }
+.faq-q.open svg { transform: rotate(45deg); }
+.faq-a {
+  display: none;
+  padding: 0 22px 18px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.faq-a.open { display: block; }
+
+/* ── Social row ── */
+.contact-social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.contact-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--line);
+  padding: 9px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all .15s;
+  background: #fff;
+  text-decoration: none;
+  color: var(--black);
+}
+.contact-social-btn:hover { border-color: var(--green); color: var(--green); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+  .contact-info-panel { order: -1; }
+  .form-row { grid-template-columns: 1fr; }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .contact-form-card { padding: 24px 16px; }
+}
+
   </style>
 </head>
 <body>
@@ -1160,12 +1395,7 @@ p { color: var(--body); }
       <div class="nav-logo-text">Learn<span>&amp;</span>Pass</div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="resources.html">Resources</a>
-      <a href="news.html">News</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="cbt.html" class="nav-cta-btn">Practice CBT</a>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="resources.html">Resources</a><a href="news.html">News</a><a href="contact.html" class="active">Contact</a><a href="cbt.html" class="nav-cta-btn">Practice CBT</a>
     </div>
     <button class="hamburger" id="hamburger" onclick="toggleMob()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1181,49 +1411,249 @@ p { color: var(--body); }
   </div>
 </nav>
 <main>
-<div class="page-hero"><div class="wrap"><div class="bc">Home / <span>Contact</span></div><h1>Contact <span>Us</span></h1><p>Reach our team for support, feedback or partnership enquiries.</p></div></div>
-  <div class="cs"><h2>Contact Page</h2><p>Awaiting approval to proceed 🎯</p><br/><button class="btn btn-primary" onclick="window.location='index.html'">Back to Home</button></div>
-</div>
 
-<!-- TRACKING MODAL -->
-<div class="modal-overlay" id="tmodal">
-  <div class="modal">
-    <div class="modal-head"><h3>Session Tracking Result</h3><button class="modal-close" onclick="closeM()">&times;</button></div>
-    <div class="modal-status"><div class="sl">Current Status</div><div class="sv">Session Completed</div></div>
-    <div class="modal-rows">
-      <div class="modal-row"><span class="lb">Session ID</span><span class="vl">LP-2024-001234</span></div>
-      <div class="modal-row"><span class="lb">Student</span><span class="vl">Adaeze N.</span></div>
-      <div class="modal-row"><span class="lb">Exam</span><span class="vl">JAMB / Mathematics</span></div>
-      <div class="modal-row"><span class="lb">Score</span><span class="vl" style="color:var(--green); font-weight:800;">16 / 20 &nbsp;(80%)</span></div>
-      <div class="modal-row"><span class="lb">Date</span><span class="vl">29 Apr 2026</span></div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn btn-primary" onclick="printR()">Print Result</button>
-      <button class="btn btn-gold" onclick="closeM(); window.location='cbt.html'">Practice Again</button>
-    </div>
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="bc"><a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact</span></div>
+    <h1>Get in <span>Touch</span></h1>
+    <p>Questions about exams, technical issues, partnerships, or feedback — we're here and we read every message.</p>
   </div>
 </div>
 
-<div id="prcnt" style="display:none;">
-  <div style="font-family:Georgia,serif;padding:44px;max-width:560px;margin:0 auto;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #006633;padding-bottom:18px;margin-bottom:22px;">
-      <div>
-        <div style="font-size:22px;font-weight:900;color:#006633;">Learn<span style="color:#d4a800;">&amp;</span>Pass</div>
-        <div style="font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#777;margin-top:4px;">Practice Session Receipt</div>
+<!-- MAIN CONTACT SECTION -->
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- LEFT: CONTACT FORM -->
+      <div class="contact-form-card">
+
+        <!-- Form state -->
+        <div id="contact-form-wrap">
+          <div class="contact-form-title">Send Us a Message</div>
+          <div class="contact-form-sub">We respond within 24 hours on business days. Fields marked * are required.</div>
+
+          <!-- Subject tabs -->
+          <div class="subject-tabs">
+            <button class="subj-tab active" onclick="setSubject('General Enquiry', this)">General Enquiry</button>
+            <button class="subj-tab" onclick="setSubject('Technical Issue', this)">Technical Issue</button>
+            <button class="subj-tab" onclick="setSubject('Question Error', this)">Question Error</button>
+            <button class="subj-tab" onclick="setSubject('Partnership', this)">Partnership</button>
+            <button class="subj-tab" onclick="setSubject('Suggestion', this)">Suggestion</button>
+          </div>
+
+          <form id="contact-form" onsubmit="submitContact(event)" novalidate>
+
+            <input type="hidden" id="f-subject" value="General Enquiry">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-name">Full Name *</label>
+                <input type="text" id="f-name" placeholder="e.g. Adaeze Nwosu" autocomplete="name">
+                <div class="form-err" id="err-name">Please enter your full name.</div>
+              </div>
+              <div class="form-group">
+                <label for="f-email">Email Address *</label>
+                <input type="email" id="f-email" placeholder="you@example.com" autocomplete="email">
+                <div class="form-err" id="err-email">Please enter a valid email address.</div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="f-phone">Phone Number</label>
+                <input type="tel" id="f-phone" placeholder="08012345678" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="f-exam">Related Exam</label>
+                <select id="f-exam">
+                  <option value="">-- Select if applicable --</option>
+                  <option>JAMB / UTME</option>
+                  <option>WAEC / WASSCE</option>
+                  <option>NECO / SSCE</option>
+                  <option>GCE / NABTEB</option>
+                  <option>Not exam-related</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="f-message">Message *</label>
+              <textarea id="f-message" placeholder="Tell us what's on your mind. Be as detailed as possible — it helps us respond faster."></textarea>
+              <div class="form-err" id="err-message">Please enter a message (at least 20 characters).</div>
+            </div>
+
+            <div class="form-group" style="display:flex;align-items:center;gap:10px;margin-bottom:0;">
+              <input type="checkbox" id="f-consent" style="width:auto;border:none;padding:0;accent-color:var(--green);">
+              <label for="f-consent" style="font-size:12px;color:var(--muted);letter-spacing:0;text-transform:none;font-weight:500;margin-bottom:0;cursor:pointer;">
+                I agree that Learn&amp;Pass may use my information to respond to this enquiry.
+              </label>
+            </div>
+            <div class="form-err" id="err-consent" style="margin-bottom:12px;">Please accept the terms to proceed.</div>
+
+            <button type="submit" class="contact-submit-btn" id="submit-btn">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Success state (hidden) -->
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#006633" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="form-success-title">Message Sent!</div>
+          <div class="form-success-msg">Thank you for reaching out. Our team will review your message and reply to your email within <strong>24 hours</strong> on business days.<br><br>In the meantime, check out our resources or try a CBT practice session.</div>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="resources.html" class="btn btn-primary">Browse Resources</a>
+            <a href="cbt.html" class="btn btn-gold">Practice CBT</a>
+            <button class="btn btn-ghost" onclick="resetForm()">Send Another</button>
+          </div>
+        </div>
+
       </div>
-      <div style="text-align:right;font-size:12px;color:#777;"><div>Date: 29 Apr 2026</div><div>Receipt: LP-2024-001234</div></div>
+
+      <!-- RIGHT: INFO PANEL -->
+      <div class="contact-info-panel">
+
+        <div class="contact-info-block">
+          <div class="cib-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#006633" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="cib-label">Email Us</div>
+          <div class="cib-value">hello@learnandpass.ng</div>
+          <div class="cib-note">For general enquiries, technical support and partnerships. We respond within 24 hours.</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="cib-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#006633" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="cib-label">WhatsApp Support</div>
+          <div class="cib-value">+234 800 LEARNPASS</div>
+          <div class="cib-note">Mon – Fri, 8am – 6pm WAT. For urgent exam-day queries and quick support.</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="cib-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#006633" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="cib-label">Office Address</div>
+          <div class="cib-value">Victoria Island, Lagos</div>
+          <div class="cib-note">Learn&amp;Pass HQ, Lagos, Nigeria. Visits by appointment only.</div>
+        </div>
+
+        <div class="contact-info-block">
+          <div class="cib-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#006633" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="cib-label">Response Time</div>
+          <div class="cib-value">Within 24 Hours</div>
+          <div class="cib-note">Business days, 8am – 6pm WAT. Urgent exam-day issues are prioritised.</div>
+        </div>
+
+        <!-- Social links -->
+        <div class="contact-info-block" style="border-bottom:1px solid var(--line);">
+          <div class="cib-label">Follow Us</div>
+          <div class="cib-note" style="margin-bottom:12px;">Stay updated with JAMB, WAEC &amp; NECO news and exam tips.</div>
+          <div class="contact-social-row">
+            <a href="#" class="contact-social-btn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a href="#" class="contact-social-btn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              Twitter / X
+            </a>
+            <a href="#" class="contact-social-btn">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+      </div><!-- end right panel -->
+
+    </div><!-- end contact-grid -->
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section" style="background:var(--bg); border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="faq-section">
+      <div class="eyebrow">FREQUENTLY ASKED QUESTIONS</div>
+      <h2 class="section-title">Quick Answers</h2>
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Is Learn&amp;Pass completely free?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">Yes — 100% free. Every past question, every worked solution, every CBT practice session. No subscriptions, no hidden fees. We are funded by grants and sponsorships so Nigerian students never pay a kobo.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How current are the past questions?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">Our question bank is updated within days of each exam release. We cover JAMB from 2005, WAEC from 2000, NECO from 2004, and GCE from 2008 — up to and including 2024 editions. The 2025 editions will be added as official materials are released.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do I need to create an account?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">Not yet. The current version is open access — no registration required. Future updates will introduce optional accounts so you can save progress, track scores over time, and set personal study targets. Registration will always be free.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            I found a wrong answer. What do I do?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">Use the contact form on this page and select "Question Error" as the subject. Tell us the exam, subject, year, and question number. Our editorial team reviews every report — if it's wrong, we fix it within 48 hours and credit you in our update log.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Can I use this on my phone?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">Absolutely. Learn&amp;Pass is fully mobile-responsive and designed for low-bandwidth connections. You can practise on a basic Android phone on 2G without issues. A native app (Android &amp; iOS) is on our roadmap for 2026.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How can my school or organisation partner with you?
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </div>
+          <div class="faq-a">We welcome partnerships with secondary schools, tutorial centres, NGOs, and government education bodies. Use the contact form above and select "Partnership". Our team will respond with a partnership brief within 48 hours.</div>
+        </div>
+
+      </div>
     </div>
-    <table style="width:100%;border-collapse:collapse;font-size:13px;">
-      <tr style="background:#f5f5f3;"><td style="padding:11px 14px;border:1px solid #ddd;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#777;">Student</td><td style="padding:11px 14px;border:1px solid #ddd;">Adaeze N.</td></tr>
-      <tr><td style="padding:11px 14px;border:1px solid #ddd;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#777;">Exam</td><td style="padding:11px 14px;border:1px solid #ddd;">JAMB / Mathematics</td></tr>
-      <tr style="background:#f5f5f3;"><td style="padding:11px 14px;border:1px solid #ddd;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#777;">Score</td><td style="padding:11px 14px;border:1px solid #ddd;font-weight:800;color:#006633;">16 / 20 (80%)</td></tr>
-      <tr><td style="padding:11px 14px;border:1px solid #ddd;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#777;">Status</td><td style="padding:11px 14px;border:1px solid #ddd;font-weight:800;color:#006633;">Completed</td></tr>
-    </table>
-    <div style="margin-top:22px;text-align:center;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:14px;">Learn&amp;Pass · learnandpass.ng · Free Exam Practice for Nigerian Students</div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="wrap" style="text-align:center;">
+    <h2 style="color:#fff;font-family:'Playfair Display',serif;font-size:clamp(22px,4vw,34px);margin-bottom:12px;">Still have questions?</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:28px;">Our team is standing by. Send a message above or jump straight into practising.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="cbt.html" class="btn btn-gold" style="font-size:15px;padding:14px 36px;">Start CBT Practice &rarr;</a>
+      <a href="resources.html" class="btn btn-outline" style="font-size:15px;padding:14px 36px;color:#fff;border-color:rgba(255,255,255,.5);">Browse Resources</a>
+    </div>
   </div>
 </div>
 
-<!-- FOOTER -->
 </main>
 <footer class="footer">
   <div class="footer-main">
@@ -1258,9 +1688,10 @@ p { color: var(--body); }
       <li><a href="contact.html">Report an Error</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
+  <div class="footer-bottom">&copy; 2026 Learn&amp;Pass. All rights reserved. Built with dedication for Nigerian students. 🇳🇬</div>
 </footer>
 <script>
+
 
 function toggleMob() {
   var m = document.getElementById('mnav');
@@ -1303,6 +1734,83 @@ function showToast(msg) {
   clearTimeout(t._timer);
   t._timer = setTimeout(function(){ t.style.opacity = '0'; }, 3000);
 }
+
+
+var contactSubject = 'General Enquiry';
+
+function setSubject(val, el) {
+  contactSubject = val;
+  document.getElementById('f-subject').value = val;
+  document.querySelectorAll('.subj-tab').forEach(function(t){ t.classList.remove('active'); });
+  el.classList.add('active');
+}
+
+function toggleFaq(el) {
+  var answer = el.nextElementSibling;
+  var isOpen = el.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-q').forEach(function(q){ q.classList.remove('open'); });
+  document.querySelectorAll('.faq-a').forEach(function(a){ a.classList.remove('open'); });
+  // Open clicked (if it was closed)
+  if (!isOpen) {
+    el.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+function validateField(id, errId, check) {
+  var el = document.getElementById(id);
+  var err = document.getElementById(errId);
+  if (!el || !err) return true;
+  var valid = check(el.value.trim());
+  el.classList.toggle('error', !valid);
+  err.style.display = valid ? 'none' : 'block';
+  return valid;
+}
+
+function submitContact(e) {
+  e.preventDefault();
+
+  var nameOk = validateField('f-name',    'err-name',    function(v){ return v.length >= 2; });
+  var emailOk = validateField('f-email',   'err-email',   function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); });
+  var msgOk   = validateField('f-message', 'err-message', function(v){ return v.length >= 20; });
+
+  var consent = document.getElementById('f-consent');
+  var consentErr = document.getElementById('err-consent');
+  var consentOk = consent && consent.checked;
+  if (consentErr) consentErr.style.display = consentOk ? 'none' : 'block';
+
+  if (!nameOk || !emailOk || !msgOk || !consentOk) return;
+
+  // Disable button and show sending state
+  var btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10" stroke-dasharray="60" stroke-dashoffset="20" style="animation:spin 1s linear infinite"/></svg> Sending...';
+
+  // Simulate send (replace with real API call when backend is ready)
+  setTimeout(function() {
+    document.getElementById('contact-form-wrap').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }, 1400);
+}
+
+function resetForm() {
+  document.getElementById('contact-form').reset();
+  document.querySelectorAll('.form-err').forEach(function(e){ e.style.display = 'none'; });
+  document.querySelectorAll('.error').forEach(function(e){ e.classList.remove('error'); });
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('submit-btn').innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+  document.getElementById('form-success').style.display = 'none';
+  document.getElementById('contact-form-wrap').style.display = 'block';
+  // reset tabs
+  document.querySelectorAll('.subj-tab').forEach(function(t,i){ t.classList.toggle('active', i===0); });
+  contactSubject = 'General Enquiry';
+}
+
+// Spinner keyframe (inline)
+var style = document.createElement('style');
+style.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
+document.head.appendChild(style);
 
 </script>
 </body>
